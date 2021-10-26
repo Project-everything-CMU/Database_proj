@@ -21,17 +21,44 @@ class AddressController extends Controller{
     
     public function addAddress(Request $request){
         //dd($request->addr_ID);
+        // $cust_Number = DB::select(DB::raw("
+        // SELECT customerNumber FROM addresses"  ));
+        // // dd($cust_Number);
+        // if (($request->costomerNumber && $cust_Number) && ($request->costomerNumber || $cust_Number)){
+        //     $request->validate(
+        //     [
+        //         'No'=>'required|max:255|unique:addresses',
+        //         'customerNumber'=>'required|max:255|',
+                
+        //     ],
+        //     [
+        //         'customerNumber.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //         'No.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //         'addr_line_1.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'addr_line_1.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //         'city.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'city.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //         'state.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'state.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //         'postalcode.required'=>"กรุณาป้อนชื่อด้วยครับ",
+        //         'postalcode.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        //     ]
+        // );
+        // }
+        //else{
         $request->validate(
             [
-                'No'=>'required|max:255|',
+                'address_No'=>'required|max:255|unique:addresses',
                 'customerNumber'=>'required|max:255|',
                 
             ],
             [
                 'customerNumber.required'=>"กรุณาป้อนชื่อด้วยครับ",
                 'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'No.required'=>"กรุณาป้อนชื่อด้วยครับ",
-                'No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'address_No.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'address_No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
                 'addr_line_1.required'=>"กรุณาป้อนชื่อด้วยครับ",
                 'addr_line_1.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
                 'city.required'=>"กรุณาป้อนชื่อด้วยครับ",
@@ -42,10 +69,12 @@ class AddressController extends Controller{
                 'postalcode.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
+    //}
+        
         //บันทึกข้อมูล
         $data = array();
         $data["customerNumber"] = $request->customerNumber;
-        $data["No"] = $request->No;
+        $data["address_No"] = $request->address_No;
         $data["addr_line_1"] = $request->addr_line_1;
         $data["addr_line_2"] = $request->addr_line_2;
         $data["city"] = $request->city;
@@ -71,7 +100,7 @@ class AddressController extends Controller{
 
         $data = address::find($request->id) ;
         $data->customerNumber = $request-> customerNumber ; 
-        $data->No = $request-> No ;
+        $data->address_No = $request-> address_No ;
         $data->addr_line_1 = $request-> addr_line_1 ; 
         $data->addr_line_2 = $request-> addr_line_2 ; 
         $data->city = $request-> city ; 

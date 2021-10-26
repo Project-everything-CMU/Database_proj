@@ -19,7 +19,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">customerNumber</th>
-                                                <th scope="col">No</th>
+                                                <th scope="col">address_No</th>
                                                 <th scope="col">addr_line_1</th>
                                                 <th scope="col">addr_line_2</th>
                                                 <th scope="col">city</th>
@@ -32,7 +32,7 @@
                                                 <tr>
                                                     
                                                     <td>{{$row -> customerNumber}}</td>
-                                                    <td>{{$row -> No}}</td>
+                                                    <td>{{$row -> address_No}}</td>
                                                     <td>{{$row -> addr_line_1}}</td>
                                                     <td>{{$row -> addr_line_2}}</td>
                                                     <td>{{$row -> city}}</td>
@@ -63,8 +63,8 @@
                                         <div class = "form-group">
                                             <label for="customerNumber">customerNumber</label>
                                             <input type="integer" class = "form-control" name = "customerNumber" >
-                                            <label for="No">No</label>
-                                            <input type="integer" class = "form-control" name = "No" >
+                                            <label for="address_No">address_No</label>
+                                            <input type="string" class = "form-control" name = "address_No" >
                                             <label for="addr_line_1">addr_line_1</label>
                                             <input type="string" class = "form-control" name = "addr_line_1">
                                             <label for="addr_line_2">addr_line_2</label>

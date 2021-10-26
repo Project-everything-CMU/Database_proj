@@ -21,8 +21,8 @@
                                     <div class = "form-group">
                                                 <label for="customerNumber">customerNumber</label>
                                                 <input type="integer" class = "form-control" name = "customerNumber" value ="{{$data ->customerNumber}}">
-                                                <label for="No">No</label>
-                                                <input type="integer" class = "form-control" name = "No" value ="{{$data ->No}}">
+                                                <label for="address_No">address_No</label>
+                                                <input type="string" class = "form-control" name = "address_No" value ="{{$data ->address_No}}">
                                                 <label for="addr_line_1">addr_line_1</label>
                                                 <input type="string" class = "form-control" name = "addr_line_1" value ="{{$data ->addr_line_1}}">
                                                 <label for="addr_line_2">addr_line_2</label>

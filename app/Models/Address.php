@@ -14,7 +14,7 @@ class Address extends Model
 
     protected $fillable = [
         'customerNumber',
-        'NO',
+        'address_No',
         'addr_line_1',
         'addr_line_2',
         'city',
