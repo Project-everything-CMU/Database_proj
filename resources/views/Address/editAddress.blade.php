@@ -19,8 +19,8 @@
 
                             <input type="hidden" name = "id" value = "{{$data -> id}}">
                                     <div class = "form-group">
-                                                <label for="addr_ID">addr_ID</label>
-                                                <input type="integer" class = "form-control" name = "addr_ID" value ="{{$data ->addr_ID}}">
+                                                <label for="customerNumber">customerNumber</label>
+                                                <input type="integer" class = "form-control" name = "customerNumber" value ="{{$data ->customerNumber}}">
                                                 <label for="No">No</label>
                                                 <input type="integer" class = "form-control" name = "No" value ="{{$data ->No}}">
                                                 <label for="addr_line_1">addr_line_1</label>
@@ -35,7 +35,7 @@
                                                 <input type="integer" class = "form-control" name = "postalcode" value ="{{$data->postalcode}}">
 
                                             </div>
-                                             @error('addr_ID')
+                                             @error('customerNumber')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>
                                                 </div>

@@ -23,13 +23,13 @@ class AddressController extends Controller{
         //dd($request->addr_ID);
         $request->validate(
             [
-                'No'=>'required|max:255|unique:addresses',
-                'addr_ID'=>'required|max:255|',
+                'No'=>'required|max:255|',
+                'customerNumber'=>'required|max:255|',
                 
             ],
             [
-                'addr_ID.required'=>"กรุณาป้อนชื่อด้วยครับ",
-                'addr_ID.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'customerNumber.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
                 'No.required'=>"กรุณาป้อนชื่อด้วยครับ",
                 'No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
                 'addr_line_1.required'=>"กรุณาป้อนชื่อด้วยครับ",
@@ -44,7 +44,7 @@ class AddressController extends Controller{
         );
         //บันทึกข้อมูล
         $data = array();
-        $data["addr_ID"] = $request->addr_ID;
+        $data["customerNumber"] = $request->customerNumber;
         $data["No"] = $request->No;
         $data["addr_line_1"] = $request->addr_line_1;
         $data["addr_line_2"] = $request->addr_line_2;
@@ -70,7 +70,7 @@ class AddressController extends Controller{
     public function updateAddress(Request $request ){
 
         $data = address::find($request->id) ;
-        $data->addr_ID = $request-> addr_ID ; 
+        $data->customerNumber = $request-> customerNumber ; 
         $data->No = $request-> No ;
         $data->addr_line_1 = $request-> addr_line_1 ; 
         $data->addr_line_2 = $request-> addr_line_2 ; 

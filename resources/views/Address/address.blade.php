@@ -18,7 +18,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">addr_ID</th>
+                                                <th scope="col">customerNumber</th>
                                                 <th scope="col">No</th>
                                                 <th scope="col">addr_line_1</th>
                                                 <th scope="col">addr_line_2</th>
@@ -31,7 +31,7 @@
                                                 @foreach($address as $row)
                                                 <tr>
                                                     
-                                                    <td>{{$row -> addr_ID}}</td>
+                                                    <td>{{$row -> customerNumber}}</td>
                                                     <td>{{$row -> No}}</td>
                                                     <td>{{$row -> addr_line_1}}</td>
                                                     <td>{{$row -> addr_line_2}}</td>
@@ -61,8 +61,8 @@
                                         @csrf
 
                                         <div class = "form-group">
-                                            <label for="addr_ID">addr_ID</label>
-                                            <input type="integer" class = "form-control" name = "addr_ID" >
+                                            <label for="customerNumber">customerNumber</label>
+                                            <input type="integer" class = "form-control" name = "customerNumber" >
                                             <label for="No">No</label>
                                             <input type="integer" class = "form-control" name = "No" >
                                             <label for="addr_line_1">addr_line_1</label>
