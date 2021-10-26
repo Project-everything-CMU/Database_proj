@@ -21,6 +21,8 @@
                                     <div class = "form-group">
                                                 <label for="addr_ID">addr_ID</label>
                                                 <input type="integer" class = "form-control" name = "addr_ID" value ="{{$data ->addr_ID}}">
+                                                <label for="No">No</label>
+                                                <input type="integer" class = "form-control" name = "No" value ="{{$data ->No}}">
                                                 <label for="addr_line_1">addr_line_1</label>
                                                 <input type="string" class = "form-control" name = "addr_line_1" value ="{{$data ->addr_line_1}}">
                                                 <label for="addr_line_2">addr_line_2</label>
@@ -39,6 +41,7 @@
                                                 </div>
                                                 @enderror
                                                 <br>
+                                                
                                                 
                                                 <input type="submit" value = อัพเดท  class="btn btn-primary">
                             </form>

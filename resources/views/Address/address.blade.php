@@ -19,6 +19,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">addr_ID</th>
+                                                <th scope="col">No</th>
                                                 <th scope="col">addr_line_1</th>
                                                 <th scope="col">addr_line_2</th>
                                                 <th scope="col">city</th>
@@ -31,6 +32,7 @@
                                                 <tr>
                                                     
                                                     <td>{{$row -> addr_ID}}</td>
+                                                    <td>{{$row -> No}}</td>
                                                     <td>{{$row -> addr_line_1}}</td>
                                                     <td>{{$row -> addr_line_2}}</td>
                                                     <td>{{$row -> city}}</td>
@@ -61,6 +63,8 @@
                                         <div class = "form-group">
                                             <label for="addr_ID">addr_ID</label>
                                             <input type="integer" class = "form-control" name = "addr_ID" >
+                                            <label for="No">No</label>
+                                            <input type="integer" class = "form-control" name = "No" >
                                             <label for="addr_line_1">addr_line_1</label>
                                             <input type="string" class = "form-control" name = "addr_line_1">
                                             <label for="addr_line_2">addr_line_2</label>
