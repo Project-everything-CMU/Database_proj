@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OfficesController;
+use App\Http\Controllers\AddressController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,16 +29,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
-
 Route::get('/test' ,[AdminController::class,'test']) -> name('test');
 Route::get('/admin' ,[AdminController::class,'index']) -> name('admin');
 
-
-
 Route::get('/customer/all' ,[CustomerController::class,'customer']) -> name('customer');
-
-
-
 
 Route::get('/employee/all' ,[EmployeeController::class,'employee']) -> name('employee');
 Route::post('/employee/add' ,[EmployeeController::class,'addEmployee']) -> name('addEmployee');
@@ -63,8 +59,6 @@ Route::get('offices/edit/{office_code}' ,[OfficesController::class,'editOffices'
 Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
 
 Route::get('/user/buy/{id}',[AdminController::class,'buy']);
-
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();

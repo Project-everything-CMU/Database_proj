@@ -11,7 +11,7 @@ use App\Models\Address;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller{
+class AddressController extends Controller{
     function  address(){
         $address = address::all();
 

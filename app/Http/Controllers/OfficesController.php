@@ -26,7 +26,7 @@ class OfficesController extends Controller
     public function addOffices(Request $request){
         $request->validate(
             [
-                'office_code'=>'required|max:255|unique:products',
+                'office_code'=>'required|max:255|unique:offices',
             ],
             [
                 'office_code.required'=>"กรุณาป้อนชื่อด้วยครับ",
@@ -86,29 +86,29 @@ class OfficesController extends Controller
         $data->state = $request-> state ; 
         $data->country = $request-> country ; 
         $data->postalcode = $request-> postalcode ; 
-        $data->territory = $request-> staterritoryte ; 
+        $data->territory = $request-> territory ; 
         $data-> save() ;
         return redirect ('/offices/all') ; 
 
     }
 
-    public function deleteProduct($id){
-        $delete= Product::find($id) -> delete () ;
+    public function deleteOffices($id){
+        $delete= offices::find($id) -> delete () ;
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 
     public function softdelete($id){
-        $delete = product::find($id)->delete();
+        $delete = offices::find($id)->delete();
         return redirect()->back()->with('success',"ลบข้อมูลเรียบร้อย");
     }
 
     public function restore($id){
-        $restore= product::withTrashed()->find($id)->restore();
+        $restore= offices::withTrashed()->find($id)->restore();
         return redirect()->back()->with('success',"กู้คืนข้อมูลเรียบร้อย");
     }
 
     public function delete($id){
-        $delete= product::onlyTrashed()->find($id)->forceDelete();
+        $delete= offices::onlyTrashed()->find($id)->forceDelete();
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 }

@@ -35,8 +35,8 @@
                                                 <input type="string" class = "form-control" name = "country" value ="{{$data->country}}">
                                                 <label for="postalcode">postalcode</label>
                                                 <input type="integer" class = "form-control" name = "postalcode" value ="{{$data->postalcode}}">
-                                                <!-- <label for="territory">territory</label>
-                                                <input type="string" class = "form-control" name = "territory" value ="{{$data->territory}}"> -->
+                                                <label for="territory">territory</label>
+                                                <input type="string" class = "form-control" name = "territory" value ="{{$data->territory}}">
 
                                             </div>
                                              @error('office_code')

@@ -26,7 +26,7 @@
                                                 <th scope="col">state</th>
                                                 <th scope="col">country</th>
                                                 <th scope="col">postalcode</th>
-                                                <!-- <th scope="col">territory</th> -->
+                                                <th scope="col">territory</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -41,7 +41,7 @@
                                                     <td>{{$row -> state}}</td>
                                                     <td>{{$row -> country}}</td>
                                                     <td>{{$row -> postalcode}}</td>
-                                                    <!-- <td>{{$row -> territory}}</td> -->
+                                                    <td>{{$row -> territory}}</td>
                                                     <td>
                                                          <a href= {{url('/offices/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
@@ -81,8 +81,8 @@
                                             <input type="string" class = "form-control" name = "country">
                                             <label for="postalcode">postalcode</label>
                                             <input type="integer" class = "form-control" name = "postalcode">
-                                            <!-- <label for="territory">territory</label>
-                                            <input type="string" class = "form-control" name = "territory"> -->
+                                            <label for="territory">territory</label>
+                                            <input type="string" class = "form-control" name = "territory">
                                         </div>
                                        
                                         @error('office_code')
