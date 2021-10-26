@@ -52,6 +52,15 @@ Route::post('/user/update/',[AdminController::class,'updateUser']);
 Route::post('/user/changerole/',[AdminController::class,'changeRole']) -> name('changeRole');
 Route::get('/user/delete/{id}',[AdminController::class,'deleteUser']) -> middleware('check');
 
+Route::get('/address/all' ,[AddressController::class,'address']) -> name('address'); 
+Route::post('/address/add' ,[AddressController::class,'addAddress']) -> name('addAddress');
+Route::get('address/edit/{addr_ID}' ,[AddressController::class,'editAddress']);
+Route::post('/address/update/',[AddressController::class,'updateAddress']);
+
+Route::get('/offices/all' ,[OfficesController::class,'offices']) -> name('offices'); 
+Route::post('/offices/add' ,[OfficesController::class,'addOffices']) -> name('addOffices');
+Route::get('offices/edit/{office_code}' ,[OfficesController::class,'editOffices']);
+Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
 
 Route::get('/user/buy/{id}',[AdminController::class,'buy']);
 
