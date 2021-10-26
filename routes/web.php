@@ -6,6 +6,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OfficesController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\OrderDetailsController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,6 +58,11 @@ Route::get('/offices/all' ,[OfficesController::class,'offices']) -> name('office
 Route::post('/offices/add' ,[OfficesController::class,'addOffices']) -> name('addOffices');
 Route::get('offices/edit/{office_code}' ,[OfficesController::class,'editOffices']);
 Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
+
+Route::get('/orderDetails/all' ,[OrderDetailsController::class,'orderDetails']) -> name('orderDetails'); 
+Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails']) -> name('addOrderDetails');
+Route::get('orderDetails/edit/{addr_ID}' ,[OrderDetailsController::class,'editOrderDetails']);
+Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
 
 Route::get('/user/buy/{id}',[AdminController::class,'buy']);
 
