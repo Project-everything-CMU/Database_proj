@@ -55,6 +55,8 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$offices->links()}}
+                                        <br>
                                         </div>
                                     </div>
                                     </div>

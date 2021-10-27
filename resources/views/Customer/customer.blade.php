@@ -54,6 +54,7 @@
                                                 @endforeach
                                         
                                         </table>
+                                        {{$customer->links()}}
                                         </table>
                                     </div>
                                 </div>       

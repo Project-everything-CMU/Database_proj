@@ -16,7 +16,7 @@ class OfficesController extends Controller
 {
     //
     public function  offices(){
-        $offices = Offices::all();
+        $offices = Offices::paginate(4);
 
         return view('offices.offices' ,compact('offices'));
 

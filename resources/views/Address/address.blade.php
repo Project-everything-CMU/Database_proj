@@ -51,6 +51,8 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$address->links()}}
+                                        <br>
                                         </div>
                                     </div>
                                     </div>

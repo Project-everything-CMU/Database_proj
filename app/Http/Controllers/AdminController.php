@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     public function index(){
-            $users = User::all();
+            $users = User::paginate(10);
             //$user = Auth::user() -> name  ;
             return view('Admin.admin' ,compact('users'));
             // if($user== "EMANUEL"){

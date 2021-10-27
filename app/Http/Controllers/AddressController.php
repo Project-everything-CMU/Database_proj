@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AddressController extends Controller{
+    
     function  address(){
-        $address = address::all();
+        $address = address::paginate(4);
 
         return view('Address.address' ,compact('address'));
 

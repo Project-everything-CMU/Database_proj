@@ -71,7 +71,7 @@ class CustomerController extends Controller
 
    
    public function  customer(){
-    $customer= Customer::all();
+    $customer= Customer::paginate(4);
 
     return view('customer.customer' ,compact('customer'));
 

@@ -53,6 +53,8 @@
                                                 @endforeach
                                         
                                         </table>
+                                        {{$Preorder->links()}}
+                                        <br>
                                         </table>
                                     </div>
                                 </div>       

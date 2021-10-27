@@ -14,7 +14,7 @@ class PaymentsController extends Controller
 {
     //
     public function index () {
-            $data = payments::all();
+            $data = payments::paginate(4);
             return view('payment.payment' , compact('data')) ; 
     }
 

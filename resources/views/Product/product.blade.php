@@ -58,6 +58,8 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$products->links()}}
+                                        <br>
                                         </div>
                                     </div>
 

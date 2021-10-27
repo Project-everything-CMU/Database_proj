@@ -12,7 +12,7 @@ use App\Models\Preorder;
 class PreOrdercontroller extends Controller
 {
      public function index () {
-        $data = Preorder::all();
+        $data = Preorder::paginate(4);
         return view('Preorder.Preorder' , compact('data')) ; 
     }
     public function addPreorder(Request $request){

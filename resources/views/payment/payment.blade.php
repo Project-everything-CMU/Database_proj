@@ -51,6 +51,8 @@
                                                 @endforeach
                                         
                                         </table>
+                                        {{$data->links()}}
+                                        <br>
                                         </table>
                                     </div>
                                 </div>       
