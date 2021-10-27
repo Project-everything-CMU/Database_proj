@@ -6,17 +6,23 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                HELLO  EMPLOYEE
+            <center>
+            <body>
+            <br>
+            EMPLOYEE 
+            </body>
+            </center>    
+            
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูลพนักงาน</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></center></div>
 
                         </div>
                     <div>
                     <div class = "col-md-12">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></center></div>
                                 <div class ="card-body">
 
                                     <form action="{{route('addEmployee')}}" method ="post" >

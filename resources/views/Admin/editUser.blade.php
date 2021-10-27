@@ -6,9 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <center>
+            <body>
+            <br>
             HELLO EDIT USER 
+            </body>
+            </center>
       <div class="py-12">
   
   
@@ -39,7 +44,12 @@
                            
 
                 </div>
-                @error('product_code')
+                @error('reportTo')
+                        <div class="my-2">
+                                <span class="text-danger">{{$message}}</span>
+                        </div>
+                @enderror
+                @error('jobTitle')
                         <div class="my-2">
                                 <span class="text-danger">{{$message}}</span>
                         </div>

@@ -6,9 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            HELLO  EDIT PRODUCT
+            <center>
+                <body>
+                <br>
+                EDIT PRODUCT
+                </body>
+            </center>
       <div class="py-12">
   
           
@@ -42,13 +47,53 @@
                             <input type="integer" class = "form-control" name = "buy_price" value ="{{$data->buy_price}}">
                             <label for="MSRP">MSRP</label>
                             <input type="integer" class = "form-control" name = "MSRP" value ="{{$data->MSRP}}">
-
+                            <br>
                                        
-                                        @error('product_code')
-                                            <div class="my-2">
-                                                <span class="text-danger">{{$message}}</span>
-                                            </div>
-                                        @enderror
+                            @error('product_code')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('product_name')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('product_line')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('product_scale')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('product_vendor')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('product_description')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('quantity_instock')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('buy_price')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
+                                @error('MSRP')
+                                <div class="my-2">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                            @enderror
                                         <br>
                                         <input type="submit" value = อัพเดท  class="btn btn-primary">
                                     </form>

@@ -6,18 +6,24 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                กรุณากรอกข้อมูล
+            <center>
+            <body>
+            <br>
+            ADDRESS
+            </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></center></div>
                             <div class = "container">
                                 <div class = "row ">
                                 <div class = "center">
                                     <table class="table">
                                         <thead>
                                             <tr>
+                                                <th scope="col">No.</th>
                                                 <th scope="col">addressID</th>
                                                 <th scope="col">address_No</th>
                                                 <th scope="col">addr_line_1</th>
@@ -30,7 +36,7 @@
                                         <tbody>
                                                 @foreach($address as $row)
                                                 <tr>
-                                                    
+                                                    <td>{{$row -> id}}</td>
                                                     <td>{{$row -> addressID}}</td>
                                                     <td>{{$row -> address_No}}</td>
                                                     <td>{{$row -> addr_line_1}}</td>
@@ -54,37 +60,64 @@
                         </div>
                 <div>
                     <div class = "col-md-15">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></center></div>
                                 <div class ="card-body">
 
                                     <form action="{{route('addAddress')}}" method ="post" >
                                         @csrf
 
                                         <div class = "form-group">
-                                            <label for="addressID">addressID (ex: XXXXX)*</label>
+                                            <label for="addressID">addressID (ex: XXXXX)</label>
                                             <input type="string" class = "form-control" name = "addressID" >
-                                            <label for="address_No">address_No (ex: addressID_No)*</label>
+                                            <label for="">address_No (ex: addressID_No)</label>
                                             <input type="string" class = "form-control" name = "address_No" >
-                                            <label for="addr_line_1">addr_line_1*</label>
+                                            <label for="addr_line_1">addr_line_1</label>
                                             <input type="string" class = "form-control" name = "addr_line_1">
                                             <label for="addr_line_2">addr_line_2</label>
                                             <input type="string" class = "form-control" name = "addr_line_2">
-                                            <label for="city">city*</label>
+                                            <label for="city">city</label>
                                             <input type="string" class = "form-control" name = "city">
-                                            <label for="state">state*</label>
+                                            <label for="state">state</label>
                                             <input type="string" class = "form-control" name = "state">
-                                            <label for="postalcode">postalcode*</label>
+                                            <label for="postalcode">postalcode</label>
                                             <input type="integer" class = "form-control" name = "postalcode">
-                                            <br>
-                                                <label for="*">*จำเป็นต้องมี</label>
-                                            <br>
-                                        </div>
+                                            </div>
                                        
-                                        @error('addr_ID')
+                                            @error('addr_ID')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
-                                        @enderror
+                                            @enderror
+                                            @error('address_No')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('addr_line_1')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('addr_line_2')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('city')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('state')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('postalcode')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">
                                     </form>
