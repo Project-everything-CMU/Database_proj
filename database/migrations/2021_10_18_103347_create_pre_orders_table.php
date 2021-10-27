@@ -15,12 +15,12 @@ class CreatePreOrdersTable extends Migration
     {
         Schema::create('pre_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_number')->unique();
-            $table->integer('order_code')->unique();
-            $table->integer('presale')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->timestamps();
+            $table->integer('orderNumber')->unique();
+            $table->integer('productCode')->unique();
+            $table->double('preSale');
+            $table->integer('quantity');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
