@@ -86,7 +86,7 @@ Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'edi
 Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment');
 Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');
 Route::get('payment/edit/{id}' ,[PaymentsController::class,'editPayment']);
-
+Route::post('/payment/update/',[PaymentsController::class,'updatePayment']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();

@@ -28,6 +28,15 @@ class PaymentsController extends Controller
             return redirect() -> back() ;
     }
     public function editPayment($id){
-        dd($id) ;
+            $data = payments::find($id) ; 
+            return view('payment.edit', compact('data'));
+    } 
+
+    public function updatePayment(Request $request){
+
+        $datas = payments::all();
+        $data = payments::find($request->id) ;
+        $data-> save() ;
+        return view ('/payment.payment' , compact('datas')) ; 
     }
 }

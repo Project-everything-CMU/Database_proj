@@ -28,7 +28,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($data as $row)
+                                            @foreach($datas as $row)
                                             <tr>
                                                     
                                                 <td>{{$row -> id}}</td>

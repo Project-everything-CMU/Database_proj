@@ -41,7 +41,7 @@
                                                 <td>{{$row -> SaleRepEmployeeNumber}}</td>
                                            
                                                     <td>
-                                                            <a href= {{url('/customer/edit/'.$row->customerNumber)}} class="btn btn-primary">แก้ไข</a>
+                                                            <a href= {{url('/customer/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
                                                    
                                                 </tr> 
@@ -65,18 +65,18 @@
                                             <input type="integer" class = "form-control" name = "customerNumber" >
                                             <label for="customerName">customerName</label>
                                             <input type="text" class = "form-control" name = "customerName">
-                                            <label for="contactFirstname">contactFirstname</label>
-                                            <input type="text" class = "form-control" name = "contactFirstname">
+                                            <label for="contactFirstName">contactFirstName</label>
+                                            <input type="text" class = "form-control" name = "contactFirstName">
                                             <label for="contactLastname">contactLastname</label>
                                             <input type="text" class = "form-control" name = "contactLastname">
-                                            <label for="phone">phone</label>
-                                            <input type="text" class = "form-control" name = "phone">
+                                            <label for="Phone">Phone</label>
+                                            <input type="text" class = "form-control" name = "Phone">
                                             <label for="AddressID">AddressID</label>
                                             <input type="text" class = "form-control" name = "AddressID">
                                         
 
-                                        </div>
-                                       
+                                        </div>		
+                                        
                                         @error('customerNumber')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>

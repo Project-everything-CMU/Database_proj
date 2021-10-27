@@ -14,14 +14,19 @@ class CustomerController extends Controller
 
     public function editCustomer($id){
         $data =  customer::find($id) ;
-        return view('customer.editProduct' , ['data' => $data]);    
+        return view('customer.editCustomer' , compact('data'));    
 
     }
 
     public function updateCustomer(Request $request){
-
-
+        
+       
         $data = customer::find($request->id) ;
+        $data -> customerNumber = $request -> customerNumber;
+        $data -> customerName = $request -> customerName;
+        $data -> contactFirstname = $request -> contactFirstname;
+        $data -> contactLastname = $request -> contactLastname; 
+
         $data-> save() ;
         return view ('/customer.customer') ; 
     }
@@ -44,10 +49,10 @@ class CustomerController extends Controller
            $Customer = new customer ; 
            $Customer -> customerNumber = $request -> customerNumber ; 
            $Customer -> customerName = $request -> customerName ;
+           $Customer -> contactFirstName = $request -> contactFirstName ; 
            $Customer -> contactLastname = $request ->contactLastname ; 
-           $Customer -> contactFirstname = $request -> contactFirstname ; 
-           $Customer -> phone = $request -> phone ;
-           $Customer -> Addressid = $request -> AddressID ;
+           $Customer -> Phone = $request -> Phone ;
+           $Customer -> Addressid = $request -> AddressID ;	
            $Customer -> SaleRepEmployeeNumber =   $user ;
            
            $Customer -> save() ;

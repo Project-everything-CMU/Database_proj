@@ -14,26 +14,20 @@
                 <div class = "row ">
                     <table class="table">
                         <thead>
-                        <form action="/order/update/" method ="post" >
+                        <form action="/payment/update/" method ="post" >
                             @csrf
 
                             <input type="hidden" name = "id" value = "{{$data -> id}}">
                                     <div class = "form-group">
-                                    <label for="order_number">order_number</label>
-                                            <input type="integer" class = "form-control" name = "order_number" value ="{{$data ->order_number}}">
-                                            <label for="order_date">order_date</label>
-                                            <input type="string" class = "form-control" name = "order_date" value ="{{$data ->order_date}}">
-                                            <label for="required_date">required_date</label>
-                                            <input type="string" class = "form-control" name = "required_date" value ="{{$data ->required_date}}">
-                                            <label for="shipped_date">shipped_date</label>
-                                            <input type="string" class = "form-control" name = "shipped_date" value ="{{$data->shipped_date}}">
-                                            <label for="status">status</label>
-                                            <input type="string" class = "form-control" name = "status" value ="{{$data ->status}}">
-                                            <label for="comments">comments</label>
-                                            <input type="string" class = "form-control" name = "comments" value ="{{$data->comments}}">
                                             <label for="customer_number">customer_number</label>
-                                            <input type="integer" class = "form-control" name = "customer_number" value ="{{$data->customer_number}}">
-                                            
+                                            <input type="integer" class = "form-control" name = "customer_number" value ="{{$data ->customer_number}}">
+                                            <label for="check_number">check_number</label>
+                                            <input type="string" class = "form-control" name = "check_number" value ="{{$data ->check_number}}">
+                                            <label for="payment_date">payment_date</label>
+                                            <input type="string" class = "form-control" name = "payment_date" value ="{{$data ->payment_date}}">
+                                            <label for="amount">amount</label>
+                                            <input type="string" class = "form-control" name = "amount" value ="{{$data->amount}}">
+                                           
                                              @error('order_number')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>

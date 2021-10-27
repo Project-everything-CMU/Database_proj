@@ -18,7 +18,7 @@ class CreateCustomersTable extends Migration
             $table->integer('customerNumber');
             $table->text('customerName');
             $table->text('contactLastname');
-            $table->text('contactFirstName');
+            $table->text('contactFirstName') -> nullable();
             $table->text('Phone');
             $table->text('AddressID');
             $table->integer('SaleRepEmployeeNumber');
