@@ -38,7 +38,7 @@
                                                 <label for="territory">territory</label>
                                                 <input type="string" class = "form-control" name = "territory" value ="{{$data->territory}}">
 
-                                            </div>
+                                            
                                              @error('office_code')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>

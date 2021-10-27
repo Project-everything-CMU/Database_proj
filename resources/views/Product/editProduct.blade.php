@@ -43,7 +43,7 @@
                             <label for="MSRP">MSRP</label>
                             <input type="integer" class = "form-control" name = "MSRP" value ="{{$data->MSRP}}">
 
-                                        </div>
+                                       
                                         @error('product_code')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>

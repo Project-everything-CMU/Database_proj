@@ -29,6 +29,9 @@
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('offices') }}">
                         {{ __('Offices') }}
+                    </x-jet-nav-link>\
+                    <x-jet-nav-link href="{{ route('order') }}">
+                        {{ __('Order') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('orderDetails') }}">
                         {{ __('OrderDetails') }}

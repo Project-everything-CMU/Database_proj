@@ -16,7 +16,7 @@ class OrdersController extends Controller
     public function  order(){
         $order = order::all();
 
-        return view('Order.order' ,compact('orders'));
+        return view('Order.order' ,compact('order'));
     }
     
     public function addOrder (Request $request){
@@ -27,23 +27,29 @@ class OrdersController extends Controller
             [
                 'order_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'order_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'product_code.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
-                'product_code.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'quantity_ordered.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
-                'quantity_ordered.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'price_each.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
-                'price_each.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'orderline_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
-                'orderline_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'order_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'order_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'required_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'required_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'shipped_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'shipped_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'status.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'status.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'comments.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'comments.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'customer_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'customer_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
         //บันทึกข้อมูล
         $data = array();
         $data["order_number"] = $request->order_number;
-        $data["product_code"] = $request->product_code;
-        $data["quantity_ordered"] = $request->quantity_ordered;
-        $data["price_each"] = $request->price_each;
-        $data["orderline_number"] = $request->orderline_number;
+        $data["order_date"] = $request->order_date;
+        $data["required_date"] = $request->required_date;
+        $data["shipped_date"] = $request->shipped_date;
+        $data["status"] = $request->status;
+        $data["comments"] = $request->comments;
+        $data["customer_number"] = $request->customer_number;
      
        
         //query builder
@@ -63,10 +69,12 @@ class OrdersController extends Controller
 
         $data = order::find($request->id) ;
         $data->order_number = $request-> order_number ; 
-        $data->product_code = $request-> product_code ;
-        $data->quantity_ordered = $request-> quantity_ordered ;
-        $data->price_each = $request-> price_each ; 
-        $data->orderline_number = $request-> orderline_number ; 
+        $data->order_date = $request-> order_date ;
+        $data->required_date = $request-> required_date ; 
+        $data->shipped_date = $request-> shipped_date ;
+        $data->status = $request-> status ;
+        $data->comments = $request-> comments ; 
+        $data->customer_number = $request-> customer_number ; 
         $data-> save() ;
         return redirect ('/order/all') ; 
 
@@ -87,8 +95,8 @@ class OrdersController extends Controller
         return redirect()->back()->with('success',"กู้คืนข้อมูลเรียบร้อย");
     }
 
-    public function delete($id){
-        $delete= Order::onlyTrashed()->find($id)->forceDelete();
-        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
-    }
+    // public function delete($id){
+    //     $delete= Order::onlyTrashed()->find($id)->forceDelete();
+    //     return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+    // }
 }
