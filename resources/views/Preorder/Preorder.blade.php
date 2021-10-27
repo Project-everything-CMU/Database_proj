@@ -53,7 +53,7 @@
                                                 @endforeach
                                         
                                         </table>
-                                        {{$Preorder->links()}}
+                                        {{$data->links()}}
                                         <br>
                                         </table>
                                     </div>
