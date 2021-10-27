@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     //
     public function   product(){
-        $products= Product::all();
+        $products= Product::paginate(4);
         return view('Product.product' ,compact('products'));
 
     
@@ -76,16 +76,32 @@ class ProductController extends Controller
                 'product_name'=>'required|max:255'
             ],
             [
-                'product_code.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'product_code.required'=>"กรุณากรอก product_code ด้วยครับ",
                 'product_code.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'product_name.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'product_name.required'=>"กรุณากรอก product_name ด้วยครับ",
                 'product_name.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'product_line.required'=>"กรุณากรอก product_line ด้วยครับ",
+                'product_line.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'product_scale.required'=>"กรุณากรอก product_scale ด้วยครับ",
+                'product_scale.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'product_vendor.required'=>"กรุณากรอก product_vendor ด้วยครับ",
+                'product_vendor.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'product_description.required'=>"กรุณากรอก product_description ด้วยครับ",
+                'product_description.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'product_description.required'=>"กรุณากรอก product_description ด้วยครับ",
+                'product_description.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'quantity_instock.required'=>"กรุณากรอก quantity_instock ด้วยครับ",
+                'quantity_instock.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'buy_price.required'=>"กรุณากรอก buy_price ด้วยครับ",
+                'buy_price.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'MSRP.required'=>"กรุณากรอก MSRP ด้วยครับ",
+                'MSRP.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
         //บันทึกข้อมูล
         $data = new Product ; 
         $data -> product_code = $request->product_code;
-        $data->product_name = $request->product_name;
+        $data -> product_name = $request->product_name;
         $data->product_line = $request->product_line;
         $data->product_scale = $request->product_scale;
         $data->product_vendor = $request->product_vendor;

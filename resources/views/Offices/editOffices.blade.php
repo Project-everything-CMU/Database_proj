@@ -6,9 +6,15 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            EDIT ADDRESS
+            <center>
+                <body>
+                <br>
+                EDIT ADDRESS
+                </body>
+            </center>
+            
         <div class="py-5">
             <div class = "container">
                 <div class = "row ">
@@ -19,7 +25,7 @@
 
                             <input type="hidden" name = "id" value = "{{$data -> id}}">
                                     <div class = "form-group">
-                                                <label for="office_code">office_code</label>
+                                                <label for="office_code">office_code (ex: XXXXX)</label>
                                                 <input type="integer" class = "form-control" name = "office_code" value ="{{$data ->office_code}}">
                                                 <label for="phone">phone</label>
                                                 <input type="string" class = "form-control" name = "phone" value ="{{$data ->phone}}">
@@ -37,12 +43,52 @@
                                                 <input type="integer" class = "form-control" name = "postalcode" value ="{{$data->postalcode}}">
                                                 <label for="territory">territory</label>
                                                 <input type="string" class = "form-control" name = "territory" value ="{{$data->territory}}">
-
+                                                <br>
                                             
-                                             @error('office_code')
-                                                <div class="my-2">
-                                                    <span class="text-danger">{{$message}}</span>
-                                                </div>
+                                                @error('office_code')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('phone')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('addr_line_1')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('addr_line_2')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('city')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('state')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('country')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('postalcode')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('territory')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
                                                 @enderror
                                                 <br>
                                                 

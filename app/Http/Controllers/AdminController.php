@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     public function index(){
-            $users = User::all();
+            $users = User::paginate(10);
             //$user = Auth::user() -> name  ;
             return view('Admin.admin' ,compact('users'));
             // if($user== "EMANUEL"){
@@ -64,11 +64,18 @@ class AdminController extends Controller
 
    
     public function changeRole(Request $request){
+        $request->validate(
+        [
+            'reportTo.required'=>"กรุณากรอก reportTo ด้วยครับ",
+            'reportTo.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+            'jobTitle.required'=>"กรุณากรอก jobTitle ด้วยครับ",
+            'jobTitle.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        ]
+        );
         $users = User::all();
         $data = User::find($request->id) ;
         $data["reportTo"] = $request-> reportTo;
         $data["jobTitle"] = $request->jobTitle;
-        
         $data-> save() ;
 
         return view('admin.admin' , compact('users'));

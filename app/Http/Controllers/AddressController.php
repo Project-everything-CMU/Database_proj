@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AddressController extends Controller{
+    
     function  address(){
-        $address = address::all();
+        $address = address::paginate(4);
 
         return view('Address.address' ,compact('address'));
 
@@ -55,17 +56,19 @@ class AddressController extends Controller{
                 
             ],
             [
-                'addressID.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'addressID.required'=>"กรุณากรอก addressID ด้วยครับ",
                 'addressID.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'address_No.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'address_No.required'=>"กรุณากรอก address_No ด้วยครับ",
                 'address_No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'addr_line_1.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'addr_line_1.required'=>"กรุณากรอก addr_line_1 ด้วยครับ",
                 'addr_line_1.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'city.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'addr_line_1.required'=>"กรุณากรอก addr_line_2 ด้วยครับ",
+                'addr_line_1.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'city.required'=>"กรุณากรอก city ด้วยครับ",
                 'city.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'state.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'state.required'=>"กรุณากรอก state ด้วยครับ",
                 'state.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'postalcode.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'postalcode.required'=>"กรุณากรอก postalcode ด้วยครับ",
                 'postalcode.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );

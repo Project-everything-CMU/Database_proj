@@ -6,18 +6,24 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                กรุณากรอกข้อมูล
+            <center>
+                <body>
+                <br>
+                ADDRESS
+                </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></center></div>
                             <div class = "container">
                                 <div class = "row ">
                                 <div class = "center">
                                     <table class="table">
                                         <thead>
                                             <tr>
+                                                <th scope="col">No.</th>
                                                 <th scope="col">office_code</th>
                                                 <th scope="col">city</th>
                                                 <th scope="col">phone</th>
@@ -32,7 +38,7 @@
                                         <tbody>
                                                 @foreach($offices as $row)
                                                 <tr>
-
+                                                    <td>{{$row -> id}}</td>
                                                     <td>{{$row -> office_code}}</td>
                                                     <td>{{$row -> city}}</td>
                                                     <td>{{$row -> city}}</td>
@@ -49,6 +55,8 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$offices->links()}}
+                                        <br>
                                         </div>
                                     </div>
                                     </div>
@@ -57,7 +65,7 @@
                         </div>
                 <div>
                     <div class = "col-md-12">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></center></div>
                                 <div class ="card-body">
 
                                     <form action="{{route('addOffices')}}" method ="post" >
@@ -65,7 +73,7 @@
 
                                         <div class = "form-group">
                                             
-                                            <label for="office_code">office_code</label>
+                                            <label for="office_code">office_code (ex: XXXXX)</label>
                                             <input type="integer" class = "form-control" name = "office_code" >
                                             <label for="phone">phone</label>
                                             <input type="integer" class = "form-control" name = "phone" >
@@ -86,6 +94,46 @@
                                         </div>
                                        
                                         @error('office_code')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('phone')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('addr_line_1')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('addr_line_2')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('city')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('state')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('country')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('postalcode')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('territory')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>

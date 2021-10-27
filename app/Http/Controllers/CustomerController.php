@@ -41,9 +41,19 @@ class CustomerController extends Controller
                     'customerNumber'=>'required|unique:customers|max:255'
                 ],
                 [
-                    'customerNumber.required'=>"กรุณาป้อนชื่อแผนกด้วยครับ",
+                    'customerNumber.required'=>"กรุณากรอก customerNumber ด้วยครับ",
                     'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                    'customerNumber.unique'=>"มี customerNumber นี้ในฐานข้อมูลแล้ว"
+                    'customerNumber.unique'=>"มี customerNumber นี้ในฐานข้อมูลแล้ว",
+                    'customerName.required'=>"กรุณากรอก customerName ด้วยครับ",
+                    'customerName.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'contactFirstName.required'=>"กรุณากรอก contactFirstName ด้วยครับ",
+                    'contactFirstName.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'contactLastname.required'=>"กรุณากรอก contactLastname ด้วยครับ",
+                    'contactLastname.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'Phone.required'=>"กรุณากรอก Phone ด้วยครับ",
+                    'Phone.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'AddressID.required'=>"กรุณากรอก AddressID ด้วยครับ",
+                    'AddressID.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
                 ]
             );
            $Customer = new customer ; 
@@ -61,7 +71,7 @@ class CustomerController extends Controller
 
    
    public function  customer(){
-    $customer= Customer::all();
+    $customer= Customer::paginate(4);
 
     return view('customer.customer' ,compact('customer'));
 

@@ -24,11 +24,23 @@ class EmployeeController extends Controller
                 'lastname'=>'required|max:255'
             ],
             [
-                'firstname.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'firstname.required'=>"กรุณากรอก firstname ด้วยครับ",
                 'firstname.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'lastname.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'lastname.required'=>"กรุณากรอก lastname ด้วยครับ",
                 'lastname.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-            ]
+                'extention.required'=>"กรุณากรอก extention ด้วยครับ",
+                'extention.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'email.required'=>"กรุณากรอก email ด้วยครับ",
+                'email.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'password.required'=>"กรุณากรอก password ด้วยครับ",
+                'password.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'officerCode.required'=>"กรุณากรอก officerCode ด้วยครับ",
+                'officerCode.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'reportTo.required'=>"กรุณากรอก reportTo ด้วยครับ",
+                'reportTo.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'jobTitle.required'=>"กรุณากรอก jobTitle ด้วยครับ",
+                'jobTitle.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+        ]
         );
         //บันทึกข้อมูล
         $data = array();

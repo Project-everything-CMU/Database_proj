@@ -11,6 +11,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderDetailsController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\PreOrderController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -89,6 +90,12 @@ Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment
 Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');
 Route::get('payment/edit/{id}' ,[PaymentsController::class,'editPayment']);
 Route::post('/payment/update/',[PaymentsController::class,'updatePayment']);
+
+
+Route::get('Preorder/all' , [PreOrderController::class,'index']) -> name('Preorder');
+Route::post('Preorder/add' , [PreOrderController::class,'addPreorder']) -> name('addPreorder');
+Route::get('Preorder/edit/{id}' ,[PreOrderController::class,'editPreorder']);
+Route::post('/Preorder/update/',[PreOrderController::class,'updatePreorder']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();

@@ -6,17 +6,23 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                HELLO  PRODUCT
+            <center>
+                <body>
+                <br>
+                PRODUCT
+                </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></center></div>
                             <div class = "container">
                                 <div class = "row ">
                                     <table class="table">
                                         <thead>
                                             <tr>
+                                                <th scope="col">No.</th>
                                                 <th scope="col">product_code</th>
                                                 <th scope="col">product_name</th>
                                                 <th scope="col">product_line</th>
@@ -32,7 +38,7 @@
                                         <tbody>
                                             @foreach($products as $row)
                                             <tr>
-                                                    
+                                                <td>{{$row -> id}}</td>    
                                                 <td>{{$row -> product_code}}</td>
                                                 <td>{{$row -> product_name}}</td>
                                                 <td>{{$row -> product_line}}</td>
@@ -52,6 +58,8 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$products->links()}}
+                                        <br>
                                         </div>
                                     </div>
 
@@ -59,7 +67,7 @@
                         </div>
                 <div>
                     <div class = "col-md-12">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></center></div>
                                 <div class ="card-body">
 
                                     <form action="{{route('addProduct')}}" method ="post" >
@@ -91,7 +99,46 @@
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
-                                            
+                                            @enderror
+                                            @error('product_name')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('product_line')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('product_scale')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('product_vendor')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('product_description')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('quantity_instock')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('buy_price')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('MSRP')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
                                         @enderror
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">

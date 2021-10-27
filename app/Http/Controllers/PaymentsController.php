@@ -14,11 +14,27 @@ class PaymentsController extends Controller
 {
     //
     public function index () {
-            $data = payments::all();
+            $data = payments::paginate(4);
             return view('payment.payment' , compact('data')) ; 
     }
 
     public function addPayment(Request $request){
+        $request->validate(
+                [
+                    'customer_number'=>'required|max:255|',
+                ],
+                [
+                    'customer_number.required'=>"กรุณากรอก customer_number ด้วยครับ",
+                    'customer_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'check_number.required'=>"กรุณากรอก check_number ด้วยครับ",
+                    'check_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'payment_date.required'=>"กรุณากรอก payment_date ด้วยครับ",
+                    'payment_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'amount.required'=>"กรุณากรอก amount ด้วยครับ",
+                    'amount.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                ]
+            );
+            //บันทึก
             $data = new payments ;
             $data -> customer_number = $request -> customer_number ;
             $data -> check_number = $request -> check_number ;

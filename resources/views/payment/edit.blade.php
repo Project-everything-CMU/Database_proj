@@ -6,9 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            EDIT ADDRESS
+            <center>
+                <body>
+                <br>
+                EDIT PAYMENT
+                </body>
+            </center>
         <div class="py-5">
             <div class = "container">
                 <div class = "row ">
@@ -19,7 +24,7 @@
 
                             <input type="hidden" name = "id" value = "{{$data -> id}}">
                                     <div class = "form-group">
-                                            <label for="customer_number">customer_number</label>
+                                            <label for="customer_number">customer_number (ex: XXXXX)</label>
                                             <input type="integer" class = "form-control" name = "customer_number" value ="{{$data ->customer_number}}">
                                             <label for="check_number">check_number</label>
                                             <input type="string" class = "form-control" name = "check_number" value ="{{$data ->check_number}}">
@@ -27,12 +32,33 @@
                                             <input type="string" class = "form-control" name = "payment_date" value ="{{$data ->payment_date}}">
                                             <label for="amount">amount</label>
                                             <input type="string" class = "form-control" name = "amount" value ="{{$data->amount}}">
-                                           
-                                             @error('order_number')
-                                                <div class="my-2">
-                                                    <span class="text-danger">{{$message}}</span>
-                                                </div>
-                                                @enderror
+                                            <br>
+
+                                        @error('customer_number')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('check_number')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('addr_line_1')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('payment_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('amount')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
                                                 <br>
                                                 
                                                 
