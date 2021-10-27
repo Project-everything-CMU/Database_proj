@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Models\Customer;
+use App\Models\Employee;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 class CustomerController extends Controller
 {
 
     public function editCustomer($id){
-        $data =  product::find($id) ;
-        return view('product.editProduct' , ['data' => $data]);    
+        $data =  customer::find($id) ;
+        return view('customer.editProduct' , ['data' => $data]);    
 
     }
 
@@ -23,24 +28,19 @@ class CustomerController extends Controller
     //
     public function  addCustomer(Request $request){
           
-        $user = Auth::user() -> id ;
-       $customers = Customer::all() ;
-   //     //บันทึกข้อมูล
-   //     $data = array();
-   //     $data["customerNumber"] = $request->customerNumber;
-   //     $data["customerName"] = $request->customerName;
-   //     $data["contactLastname"] = $request->contactLastname;
-   //     $data["contactFirstname"] = $request->contactFirstname;
-   //     $data["phone"] = $request->phone;
-   //     $data["AddressID"] = $request->AddressID;
-   //     $data["SaleRepEmployeeNumber"] = $user;
-
-      
-
-   //     //query builder
-   //     DB::table('customers')->insert($data);
-   
-   //     return view('customer.customer' , compact('customer'));
+    $user = Auth::user() -> id ;
+    $customer = Customer::all() ;
+       //บันทึกข้อมูล
+    $request->validate(
+                [
+                    'customerNumber'=>'required|unique:customers|max:255'
+                ],
+                [
+                    'customerNumber.required'=>"กรุณาป้อนชื่อแผนกด้วยครับ",
+                    'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                    'customerNumber.unique'=>"มี customerNumber นี้ในฐานข้อมูลแล้ว"
+                ]
+            );
            $Customer = new customer ; 
            $Customer -> customerNumber = $request -> customerNumber ; 
            $Customer -> customerName = $request -> customerName ;
@@ -51,7 +51,7 @@ class CustomerController extends Controller
            $Customer -> SaleRepEmployeeNumber =   $user ;
            
            $Customer -> save() ;
-           return view('customer.customer' , compact('customers'));
+           return redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อย");
    }
 
    
@@ -63,7 +63,7 @@ class CustomerController extends Controller
     }
     
     public function deleteCustomer($id){
-        $delete= Product::find($id) -> delete () ;
+        $delete= Customer::find($id) -> delete () ;
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
-}
+    }
 }

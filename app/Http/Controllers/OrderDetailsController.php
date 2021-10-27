@@ -58,7 +58,7 @@ class OrderDetailsController extends Controller
 
     public function editOrderDetails($id){
      
-        $data =  offices::find($id) ;
+        $data =  OrderDetails::find($id) ;
         return view('OrderDetails.editOrderDetails' , ['data' => $data]);    
      
     }

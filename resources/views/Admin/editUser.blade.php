@@ -32,9 +32,9 @@
                     -->
      
                     <label for="reportTo">reportTo</label> 
-                    <input type="text" class = "form-control" name = "status" value ="{{$data ->reportTo}}">
+                    <input type="text" class = "form-control" name = "reportTo" value ="{{$data ->reportTo}}">
                     <label for="jobTitle">jobTitle</label> 
-                    <input type="text" class = "form-control" name = "status" value ="{{$data ->jobTitle}}">
+                    <input type="text" class = "form-control" name = "jobTitle" value ="{{$data ->jobTitle}}">
                                   
                            
 

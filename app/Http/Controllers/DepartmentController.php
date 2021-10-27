@@ -7,17 +7,15 @@ use App\Models\User;
 use App\Models\Customer;
 use App\Models\Employee;
 use App\Models\Product;
-use App\Models\Order;
+use App\Models\Department;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class OrdersController extends Controller
+class DepartmentController extends Controller
 {
     //
-    public function index () {
-        $data = Order::all();
-        return $data  ; 
+    public function index(){
+        $department = Department::all() ;
+        return view('department/all' , compact('department'));
     }
-
-    
 }

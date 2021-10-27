@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Customer;
 use App\Models\Employee;
@@ -15,7 +14,8 @@ class ProductController extends Controller
 {
     //
     public function   product(){
-        $products = Product::all();
+        $products = DB::table('Product')
+        -> select ('Product.*') -> orderby('quantity_instock');
      
         return view('Product.product' ,compact('products'));
 

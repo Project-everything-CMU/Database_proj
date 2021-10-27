@@ -40,46 +40,38 @@ class AdminController extends Controller
     public function deleteUser($id){
         $delete= Auth::user()->find($id)->forceDelete();
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
-}
+    }
    
-
-
-
-
 
     public function editUser($id){
     
     $user = Auth::user() -> id ;
     $data =  User::find($id) ;
-    //  if($data -> status == 1 ){
-    //     $data -> status ="admin";
-    //  }else if ($data -> status  == 2){
-    //     $data -> status  =="sale";
-    //  }else if ($data -> status ==3){
-    //     $data -> status = "customer" ;
-    //  }
-     
     $name = $data -> id ; 
     if($user == $name){
-     return view('admin.editUser' , compact('data'));    
-     
+        
+        return view('admin.editUser' , compact('data'));    
               
      }else{
 
          dd("you not a who can change role") ;
-     }
+     
+        }
+
     }
 
 
 
    
     public function changeRole(Request $request){
+        $users = User::all();
         $data = User::find($request->id) ;
         $data["reportTo"] = $request-> reportTo;
         $data["jobTitle"] = $request->jobTitle;
+        
         $data-> save() ;
 
-        return view('/admin');
+        return view('admin.admin' , compact('users'));
     }
     public function updateUser(Request $request ){
 

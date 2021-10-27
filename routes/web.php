@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OfficesController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderDetailsController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +36,11 @@ Route::get('/test' ,[AdminController::class,'test']) -> name('test');
 Route::get('/admin' ,[AdminController::class,'index']) -> name('admin');
 
 Route::get('/customer/all' ,[CustomerController::class,'customer']) -> name('customer');
+Route::post('/customer/add' ,[CustomerController::class,'addCustomer']) -> name('addCustomer');
+Route::get('/customer/edit/{id}' ,[CustomerController::class,'editCustomer']) -> name('editCustomer');
+Route::post('/customer/update' ,[CustomerController::class,'updateCustomer']) -> name('updateCustomer');
+Route::get('/customer/delete/{id}',[CustomerController::class,'deleteCustomer']) -> name('deleteCustomer');
+
 
 Route::get('/employee/all' ,[EmployeeController::class,'employee']) -> name('employee');
 Route::post('/employee/add' ,[EmployeeController::class,'addEmployee']) -> name('addEmployee');
