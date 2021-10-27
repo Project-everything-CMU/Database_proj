@@ -48,12 +48,14 @@ Route::get('/customer/delete/{id}',[CustomerController::class,'deleteCustomer'])
 
 Route::get('/employee/all' ,[EmployeeController::class,'employee']) -> name('employee');
 Route::post('/employee/add' ,[EmployeeController::class,'addEmployee']) -> name('addEmployee');
+Route::get('/employee/delete/{id}',[EmployeeController::class,'deleteEmployee']) -> name('deleteEmployee');
 //Route::get('/employee/add' ,[AdminController::class,'addEmployee']) -> name('addEmployee');
 
 Route::get('/product/all' ,[ProductController::class,'product']) -> name('product') ;
 Route::post('/product/add' ,[ProductController::class,'addProduct']) -> name('addProduct') ;
 Route::get('product/edit/{product_code}' ,[ProductController::class,'editProduct']) -> middleware('checkSale');
 Route::post('/product/update/',[ProductController::class,'updateProduct']) ;
+Route::get('/product/delete/{id}',[EmployeeController::class,'deleteProduct']) -> name('deleteProduct');
 
 Route::get('user/edit/{id}' ,[AdminController::class,'editUser'])  -> middleware('check');
 Route::post('/user/update/',[AdminController::class,'updateUser']);
@@ -65,21 +67,25 @@ Route::post('/address/add' ,[AddressController::class,'addAddress']) -> name('ad
 Route::get('address/edit/{addr_ID}' ,[AddressController::class,'editAddress']);
 Route::post('/address/update/',[AddressController::class,'updateAddress']);
 
+
 Route::get('/offices/all' ,[OfficesController::class,'offices']) -> name('offices'); 
 Route::post('/offices/add' ,[OfficesController::class,'addOffices']) -> name('addOffices');
 Route::get('offices/edit/{office_code}' ,[OfficesController::class,'editOffices']);
 Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
+Route::get('/Offices/delete/{id}',[OfficesController::class,'deleteOffices']) -> name('deleteOffices');
 
 Route::get('/orderDetails/all' ,[OrderDetailsController::class,'orderDetails']) -> name('orderDetails'); 
 Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails']) -> name('addOrderDetails');
 Route::get('orderDetails/edit/{order_number}' ,[OrderDetailsController::class,'editOrderDetails']);
 Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
+Route::get('/orderDetails/delete/{id}',[OrderDetailsController::class,'deleteOrderDetails']) -> name('deleteOrderDetails');
 
 Route::get('/order/all' ,[OrdersController::class,'order']) -> name('order'); 
 Route::post('/order/add' ,[OrdersController::class,'addOrder']) -> name('addOrder');
 Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
-Route::post('/order/update/',[OrdersController::class,'updateOrder']);
+Route::post('/order/update/',[OrdersController::class,'updateOrder']);delete
 Route::get('order/orderdetail' ,[OrdersController::class,'order']);
+Route::get('/order/delete/{id}',[OrdersController::class,'delete']) -> name('delete');
 
 Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']); 
 Route::get('/orderdetail/buy' ,[OrderDetailsController::class,'editDetailsbyOrder']) ;
@@ -90,13 +96,14 @@ Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment
 Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');
 Route::get('payment/edit/{id}' ,[PaymentsController::class,'editPayment']);
 Route::post('/payment/update/',[PaymentsController::class,'updatePayment']);
+Route::get('/payment/delete/{id}',[PaymentsController::class,'deletePayment']) -> name('deletePayment');
 
 
 Route::get('Preorder/all' , [PreOrderController::class,'index']) -> name('Preorder');
 Route::post('Preorder/add' , [PreOrderController::class,'addPreorder']) -> name('addPreorder');
 Route::get('Preorder/edit/{id}' ,[PreOrderController::class,'editPreorder']);
 Route::post('/Preorder/update/',[PreOrderController::class,'updatePreorder']);
-
+Route::get('/Preorder/delete/{id}',[PreOrderController::class,'deletePreorder']) -> name('deletePreorder');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
     // return view('dashboard' , compact('user'));
