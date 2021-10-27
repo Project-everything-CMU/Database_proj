@@ -21,10 +21,14 @@ class OrderDetailsController extends Controller
     //    return view('order.addOrderDetails' , compact('product'));  
     // }
 
-    public function  orderDetails(){
+    public function  orderDetails($id){
+        // $productcode_price = DB::select(DB::raw("
+        // SELECT product_code,buy_price FROM products WHERE products.id = $id "));
+        // return $productcode_price; 
+        $product = product::find($id) ;
         $orderDetails = orderDetails::all();
-
-        return view('OrderDetails.orderDetails' ,compact('orderDetails'));
+        
+       // return view('OrderDetails.orderDetails' ,compact('product'));
 
 
     }

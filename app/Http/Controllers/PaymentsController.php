@@ -34,9 +34,13 @@ class PaymentsController extends Controller
 
     public function updatePayment(Request $request){
 
-        $datas = payments::all();
-        $data = payments::find($request->id) ;
-        $data-> save() ;
-        return view ('/payment.payment' , compact('datas')) ; 
+        $data = payments::all();
+        $payment= payments::find($request->id) ;
+        $payment -> customer_number = $request -> customer_number ; 
+        $payment ->check_number = $request -> check_number ; 
+        $payment -> payment_date = $request -> payment_date ;
+        $payment -> amount = $request -> amount ; 
+        $payment -> save() ;
+        return view ('/payment.payment' , compact('data')) ; 
     }
 }

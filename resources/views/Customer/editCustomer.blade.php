@@ -39,13 +39,13 @@
                 
                             
                            
-                                        @error('product_code')
-                                            <div class="my-2">
-                                                <span class="text-danger">{{$message}}</span>
-                                            </div>
-                                        @enderror
-                                        <br>
-                                        <input type="submit" value = อัพเดท  class="btn btn-primary">
+                    @error('product_code')
+                        <div class="my-2">
+                            <span class="text-danger">{{$message}}</span>
+                        </div>
+                    @enderror
+                     <br>
+                 <input type="submit" value = อัพเดท  class="btn btn-primary">
             </form>
         </table>
     </div>
