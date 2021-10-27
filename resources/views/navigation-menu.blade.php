@@ -18,20 +18,23 @@
                     <x-jet-nav-link href="{{ route('admin') }}">
                         {{ __('Admin') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('offices') }}">
+                        {{ __('Offices') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('customer') }}">
                         {{ __('Customer') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('product') }}">
-                        {{ __('Product') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('address') }}">
                         {{ __('Address') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('offices') }}">
-                        {{ __('Offices') }}
-                    </x-jet-nav-link>\
+                    <x-jet-nav-link href="{{ route('product') }}">
+                        {{ __('Product') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('order') }}">
                         {{ __('Order') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('Preorder') }}">
+                        {{ __('Preorder') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('showorderdetail') }}">
                         {{ __('OrderDetails') }}
@@ -39,9 +42,7 @@
                     <x-jet-nav-link href="{{ route('payment') }}">
                         {{ __('Payment') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('Preorder') }}">
-                        {{ __('Preorder') }}
-                    </x-jet-nav-link>
+                    
                 </div>
             </div>
 

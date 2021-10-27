@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('order_number');
-            $table->string('order_date')->nullable();
-            $table->string('required_date')->nullable();
+            $table->string('order_date');
+            $table->string('required_date');
             $table->string('shipped_date')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status');
             $table->string('comments')->nullable();
             $table->integer('customer_number');
             $table->timestamps();

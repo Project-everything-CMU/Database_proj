@@ -21,9 +21,9 @@ class CreateProductsTable extends Migration
             $table->text('product_scale')->nullable();
             $table->text('product_vendor')->nullable();
             $table->text('product_description')->nullable();
-            $table->integer('quantity_instock')->nullable();
-            $table->integer('buy_price')->nullable();
-            $table->integer('MSRP')->nullable();
+            $table->integer('quantity_instock');
+            $table->integer('buy_price');
+            $table->integer('MSRP');
             $table->softDeletes();
             $table->timestamps();
         });
