@@ -51,7 +51,7 @@ class AddressController extends Controller{
         $request->validate(
             [
                 'address_No'=>'required|max:255|unique:addresses',
-                'addressID'=>'required|min:5,max:5|',
+                'addressID'=>'required|min:5||max:5|',
                 
             ],
             [

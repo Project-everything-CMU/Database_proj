@@ -24,11 +24,11 @@ class CustomerController extends Controller
         $data = customer::find($request->id) ;
         $data -> customerNumber = $request -> customerNumber;
         $data -> customerName = $request -> customerName;
-        $data -> contactFirstname = $request -> contactFirstname;
+        $data -> contactFirstName = $request -> contactFirstName;
         $data -> contactLastname = $request -> contactLastname; 
 
         $data-> save() ;
-        return view ('/customer.customer') ; 
+        return redirect ('/customer/all') ; 
     }
     //
     public function  addCustomer(Request $request){
