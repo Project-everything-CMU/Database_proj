@@ -6,9 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            EDIT ADDRESS
+            <center>
+                <body>
+                <br>
+                EDIT PREORDER
+                </body>
+            </center>
         <div class="py-5">
             <div class = "container">
                 <div class = "row ">
@@ -28,11 +33,27 @@
                                             <input type="double" class = "form-control" name = "preSale" value ="{{$data ->preSale}}">
                                             <label for="quantity">quantity</label>
                                             <input type="integer" class = "form-control" name = "quantity" value ="{{$data->quantity}}">
-                                           
-                                             @error('ordernumber')
-                                                <div class="my-2">
-                                                    <span class="text-danger">{{$message}}</span>
-                                                </div>
+                                            <br>
+
+                                                @error('orderNumber')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('productCode')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('preSale')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
+                                                    @enderror
+                                                    @error('quantity')
+                                                    <div class="my-2">
+                                                        <span class="text-danger">{{$message}}</span>
+                                                    </div>
                                                 @enderror
                                                 <br>
                                                 

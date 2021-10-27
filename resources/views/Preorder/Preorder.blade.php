@@ -6,12 +6,17 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                HELLO  Preorder
+            <center>
+                <body>
+                <br>
+                PREORDER
+                </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></center></div>
                                 <div class = "container">
                                     <div class = "row ">
                                         <table class="table">
@@ -54,31 +59,45 @@
                         </div>
                 <div>
                     <div class = "col-md-12">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></center></div>
                                 <div class ="card-body">
 
-                                <form action="{{route('addPayment')}}" method ="post" >
+                                <form action="{{route('addPreorder')}}" method ="post" >
                                         @csrf
 
                                         <div class = "form-group">
-                                            <label for="customer_number">customer_number</label>
-                                            <input type="integer" class = "form-control" name = "customer_number" >
-                                            <label for="check_number">check_number</label>
-                                            <input type="text" class = "form-control" name = "check_number">
-                                            <label for="payment_date">payment_date</label>
-                                            <input type="text" class = "form-control" name = "payment_date">
-                                            <label for="amount">amount</label>
-                                            <input type="text" class = "form-control" name = "amount">
+                                            <label for="orderNumber">orderNumber</label>
+                                            <input type="integer" class = "form-control" name = "orderNumber" >
+                                            <label for="productCode">productCode</label>
+                                            <input type="text" class = "form-control" name = "productCode">
+                                            <label for="preSale">preSale</label>
+                                            <input type="text" class = "form-control" name = "preSale">
+                                            <label for="quantity">quantity</label>
+                                            <input type="text" class = "form-control" name = "quantity">
                                   
                                         
 
                                         </div>
                                        
-                                        @error('customerNumber')
+                                        @error('orderNumber')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
-                                            
+                                            @enderror
+                                            @error('productCode')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('preSale')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
+                                            @error('quantity')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
                                         @enderror
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">

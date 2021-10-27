@@ -15,8 +15,8 @@ class CreatePreOrdersTable extends Migration
     {
         Schema::create('pre_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('orderNumber')->unique();
-            $table->integer('productCode')->unique();
+            $table->integer('orderNumber');
+            $table->integer('productCode');
             $table->double('preSale');
             $table->integer('quantity');
             $table->softDeletes();
