@@ -13,8 +13,8 @@ class CreateForeignKey extends Migration
      */
     public function up()
     {
-        Schema::table('Offices') , function (Blueprint $table){
-            $table -> foreign('officeCode') -> reference('officeCode') -> 
+        Schema::table('Offices' , function (Blueprint $table){
+            $table -> foreign('officeCode') -> reference('officeCode') -> on('Offices') ;
         });
 
 

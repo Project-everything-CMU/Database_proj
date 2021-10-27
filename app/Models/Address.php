@@ -13,7 +13,7 @@ class Address extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'customerNumber',
+        'addressID',
         'address_No',
         'addr_line_1',
         'addr_line_2',

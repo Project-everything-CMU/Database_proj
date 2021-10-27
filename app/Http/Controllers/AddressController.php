@@ -51,21 +51,21 @@ class AddressController extends Controller{
         $request->validate(
             [
                 'address_No'=>'required|max:255|unique:addresses',
-                'customerNumber'=>'required|max:255|',
+                'addressID'=>'required|min:5,max:5|',
                 
             ],
             [
-                'customerNumber.required'=>"กรุณาป้อนชื่อด้วยครับ",
-                'customerNumber.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'address_No.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'addressID.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'addressID.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
+                'address_No.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'address_No.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'addr_line_1.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'addr_line_1.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'addr_line_1.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'city.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'city.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'city.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'state.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'state.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'state.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'postalcode.required'=>"กรุณาป้อนชื่อด้วยครับ",
+                'postalcode.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'postalcode.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
@@ -73,7 +73,7 @@ class AddressController extends Controller{
         
         //บันทึกข้อมูล
         $data = array();
-        $data["customerNumber"] = $request->customerNumber;
+        $data["addressID"] = $request->addressID;
         $data["address_No"] = $request->address_No;
         $data["addr_line_1"] = $request->addr_line_1;
         $data["addr_line_2"] = $request->addr_line_2;
@@ -99,7 +99,7 @@ class AddressController extends Controller{
     public function updateAddress(Request $request ){
 
         $data = address::find($request->id) ;
-        $data->customerNumber = $request-> customerNumber ; 
+        $data->addressID = $request-> addressID ; 
         $data->address_No = $request-> address_No ;
         $data->addr_line_1 = $request-> addr_line_1 ; 
         $data->addr_line_2 = $request-> addr_line_2 ; 

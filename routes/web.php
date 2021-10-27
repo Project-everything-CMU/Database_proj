@@ -73,7 +73,12 @@ Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails
 Route::get('orderDetails/edit/{order_number}' ,[OrderDetailsController::class,'editOrderDetails']);
 Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
 
-Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'index']);
+Route::get('/order/all' ,[OrdersController::class,'order']) -> name('order'); 
+Route::post('/order/add' ,[OrdersController::class,'addOrder']) -> name('addOrder');
+Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
+Route::post('/order/update/',[OrdersController::class,'updateOrder']);
+
+Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'editDetailsbyOrder']);
 //Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'addOrderdetail']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

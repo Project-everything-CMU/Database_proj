@@ -19,23 +19,26 @@
 
                             <input type="hidden" name = "id" value = "{{$data -> id}}">
                                     <div class = "form-group">
-                                                <label for="customerNumber">customerNumber</label>
-                                                <input type="integer" class = "form-control" name = "customerNumber" value ="{{$data ->customerNumber}}">
-                                                <label for="address_No">address_No</label>
+                                                <label for="addressID">addressID*</label>
+                                                <input type="string" class = "form-control" name = "addressID" value ="{{$data ->addressID}}">
+                                                <label for="address_No">address_No (ex: addressID_No)*</label>
                                                 <input type="string" class = "form-control" name = "address_No" value ="{{$data ->address_No}}">
-                                                <label for="addr_line_1">addr_line_1</label>
+                                                <label for="addr_line_1">addr_line_1*</label>
                                                 <input type="string" class = "form-control" name = "addr_line_1" value ="{{$data ->addr_line_1}}">
                                                 <label for="addr_line_2">addr_line_2</label>
                                                 <input type="string" class = "form-control" name = "addr_line_2" value ="{{$data->addr_line_2}}">
-                                                <label for="city">city</label>
+                                                <label for="city">city*</label>
                                                 <input type="string" class = "form-control" name = "city" value ="{{$data->city}}">
-                                                <label for="state">state</label>
+                                                <label for="state">state*</label>
                                                 <input type="string" class = "form-control" name = "state" value ="{{$data->state}}">
-                                                <label for="postalcode">postalcode</label>
+                                                <label for="postalcode">postalcode*</label>
                                                 <input type="integer" class = "form-control" name = "postalcode" value ="{{$data->postalcode}}">
+                                                <br>
+                                                <label for="*">*จำเป็นต้องมี</label>
+                                                <br>
 
-                                            </div>
-                                             @error('customerNumber')
+                                            
+                                             @error('addressID')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>
                                                 </div>
