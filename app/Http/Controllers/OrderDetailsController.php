@@ -29,15 +29,15 @@ class OrderDetailsController extends Controller
                 'order_number'=>'required|max:255|',
             ],
             [
-                'order_number.required'=>"กรุณาป้อนชื่อด้วยครับ1",
+                'order_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'order_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'product_code.required'=>"กรุณาป้อนชื่อด้วยครับ2",
+                'product_code.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'product_code.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'quantity_ordered.required'=>"กรุณาป้อนชื่อด้วยครับ3",
+                'quantity_ordered.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'quantity_ordered.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'price_each.required'=>"กรุณาป้อนชื่อด้วยครับ4",
+                'price_each.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'price_each.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'orderline_number.required'=>"กรุณาป้อนชื่อด้วยครับ5",
+                'orderline_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
                 'orderline_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
@@ -75,6 +75,23 @@ class OrderDetailsController extends Controller
         return redirect ('/orderDetails/all') ; 
 
     }
+
+    // public function editDetailsbyOrder(Request $request,$id ){
+    //     $productcode = DB::select(DB::raw("
+    //     SELECT product_code,buy_price FROM products WHERE products.id = $id "));
+        
+    //     // $data = orderDetails::find($request->productcode) ;
+    //     // $data->order_number = $request-> order_number ; 
+    //     // $data->productcode = $request-> product_code ;
+    //     // $data->quantity_ordered = $request-> quantity_ordered ;
+    //     // $data->buy_price = $request-> price_each ; 
+    //     // $data->orderline_number = $request-> orderline_number ; 
+    //     // $data-> save() ;
+    //     //return view('OrderDetails.editOrderDetails' , compact('productcode'));
+    //     // return $productcode;
+
+    //     dd($productcode);
+    // }
 
     public function deleteOrderDetails($id){
         $delete= OrderDetails::find($id) -> delete () ;

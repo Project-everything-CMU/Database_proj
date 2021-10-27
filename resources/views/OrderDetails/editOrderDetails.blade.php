@@ -29,7 +29,6 @@
                                             <input type="integer" class = "form-control" name = "price_each" value ="{{$data->price_each}}">
                                             <label for="orderline_number">orderline_number</label>
                                             <input type="integer" class = "form-control" name = "orderline_number" value ="{{$data->orderline_number}}">
-
                                             </div>
                                              @error('order_number')
                                                 <div class="my-2">
