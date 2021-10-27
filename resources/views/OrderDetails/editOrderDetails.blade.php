@@ -1,9 +1,14 @@
 
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            EDIT ADDRESS
+            <center>
+                <body>
+                <br>
+                EDIT ORDER DETAIL
+                </body>
+            </center>
         <div class="py-5">
             <div class = "container">
                 <div class = "row ">
@@ -25,11 +30,26 @@
                                             <label for="orderline_number">orderline_number</label>
                                             <input type="integer" class = "form-control" name = "orderline_number" value ="{{$data->orderline_number}}">
                                             
-                                             @error('order_number')
+                                            @error('order_number')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>
                                                 </div>
-                                                @enderror
+                                            @enderror
+                                            @error('product_code')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('quantity_ordered')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('price_each')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
                                                 <br>
                                                 
                                                 

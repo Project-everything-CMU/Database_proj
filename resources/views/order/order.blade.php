@@ -6,18 +6,24 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                กรุณากรอกข้อมูล
+            <center>
+                <body>
+                <br>
+                ORDER
+                </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></div>
                             <div class = "container">
                                 <div class = "row ">
                                 <div class = "center">
                                     <table class="table">
                                         <thead>
                                             <tr>
+                                                <th scope="col">No.</th>    
                                                 <th scope="col">order_number</th>
                                                 <th scope="col">order_date</th>
                                                 <th scope="col">required_date</th>
@@ -30,7 +36,7 @@
                                         <tbody>
                                                 @foreach($order as $row)
                                                 <tr>
-                                                    
+                                                    <td>{{$row -> id}}</td>
                                                     <td>{{$row -> order_number}}</td>
                                                     <td>{{$row -> order_date}}</td>
                                                     <td>{{$row -> required_date}}</td>
@@ -45,6 +51,7 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        {{$order->links()}}
                                         </div>
                                     </div>
                                     </div>
@@ -54,7 +61,7 @@
                         </div>
                 <div>
                     <div class = "col-md-15">
-                            <div class = "card-header">แบบฟอร์ม</div>
+                            <div class = "card-header"><center><body>แบบฟอร์ม</body></div>
                                 <div class ="card-body">
 
                                     <form action="{{route('addOrder')}}" method ="post" >
@@ -72,6 +79,7 @@
                                             <br>
                                             <label for="status">status</label>
                                             <select name="status" id="status">
+                                                <br>
                                                 <option value="shipped">shipped</option>
                                                 <option value="resolved">resolved</option>
                                                 <option value="hold">hold</option>
@@ -88,6 +96,21 @@
                                         </div>
                                        
                                         @error('order_number')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('order_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('required_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('shipped_date')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>

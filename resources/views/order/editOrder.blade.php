@@ -6,9 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            EDIT ADDRESS
+            <center>
+                <body>
+                <br>
+                EDIT ORDER
+                </body>
+            </center>
         <div class="py-5">
             <div class = "container">
                 <div class = "row ">
@@ -34,11 +39,36 @@
                                             <label for="customer_number">customer_number</label>
                                             <input type="integer" class = "form-control" name = "customer_number" value ="{{$data->customer_number}}">
                                             
-                                             @error('order_number')
+                                            @error('order_number')
                                                 <div class="my-2">
                                                     <span class="text-danger">{{$message}}</span>
                                                 </div>
-                                                @enderror
+                                            @enderror
+                                            @error('order_date')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('required_date')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('shipped_date')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('comments')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            @error('customer_number')
+                                                <div class="my-2">
+                                                    <span class="text-danger">{{$message}}</span>
+                                                </div>
+                                            @enderror
                                                 <br>
                                                 
                                                 

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 class OrdersController extends Controller
 {
     public function  order(){
-        $order = order::all();
+        $order = order::paginate(4);
         $customer = customer::all(); 
         $orderdetail = orderdetails::all(); 
         return view('Order.order' ,compact('order' , 'customer' , 'orderdetail'));
@@ -27,19 +27,19 @@ class OrdersController extends Controller
                 'order_number'=>'required|max:255|',
             ],
             [
-                'order_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'order_number.required'=>"กรุณากรอก order_number ด้วยครับ",
                 'order_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'order_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'order_date.required'=>"กรุณากรอก order_date ด้วยครับ",
                 'order_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'required_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'required_date.required'=>"กรุณากรอก required_date ด้วยครับ",
                 'required_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'shipped_date.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'shipped_date.required'=>"กรุณากรอก shipped_date ด้วยครับ",
                 'shipped_date.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'status.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'status.required'=>"กรุณากรอก status ด้วยครับ",
                 'status.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'comments.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'comments.required'=>"กรุณากรอก comments ด้วยครับ",
                 'comments.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'customer_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'customer_number.required'=>"กรุณากรอก customer_number ด้วยครับ",
                 'customer_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );
