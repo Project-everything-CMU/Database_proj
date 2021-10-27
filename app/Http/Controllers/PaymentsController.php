@@ -59,4 +59,8 @@ class PaymentsController extends Controller
         $payment -> save() ;
         return view ('/payment.payment' , compact('data')) ; 
     }
+    public function deletePayment($id){
+        $delete= Department::find($id) -> delete () ;
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+    }
 }
