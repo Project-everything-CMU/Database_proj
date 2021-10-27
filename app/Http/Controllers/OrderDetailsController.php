@@ -16,14 +16,15 @@ use Illuminate\Support\Facades\Hash;
 class OrderDetailsController extends Controller
 {
 
-    public function index($id){
-        $product = product::find($id);
-       return view('order.addOrderDetails' , compact('product'));  
-    }
+    // public function index($id){
+    //     $product = product::find($id);
+    //    return view('order.addOrderDetails' , compact('product'));  
+    // }
+
     public function  orderDetails(){
         $orderDetails = orderDetails::all();
 
-        return view('order.orderDetails' ,compact('orderDetails'));
+        return view('OrderDetails.orderDetails' ,compact('orderDetails'));
 
 
     }
@@ -118,4 +119,3 @@ class OrderDetailsController extends Controller
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 }
-

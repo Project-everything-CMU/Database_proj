@@ -13,34 +13,6 @@ use Illuminate\Support\Facades\Hash;
 
 class OrdersController extends Controller
 {
-<<<<<<< HEAD
-    //
-    public function index () {
-        $data = Order::all(); 
-        return $data  ; 
-    }
-
-    public function addOrder(Request $request , $id) {
-            $order = Orderdetails::find($id) ; 
-            $order_number = $order -> order_number ; 
-            $customer = customer::find($request -> customer_number) ; 
-            
-            $data = new Order  ;
-            $data -> order_number = $order_number ; 
-            $data -> orderDate = $request -> orderDate ;
-            $data -> requiredDate = $request -> requiredDate ; 
-            $data -> shippedData = $request -> shippedDate ; 
-            $data -> status = $request -> status ; 
-            $data -> comment = $request -> comment ; 
-            $data -> customerNumber = $request ->customerNumber ; 
-            return $data -> id ;
-    }
-
-    public function deleteOrder($id){
-        $delete= Order::find($id) -> delete () ;
-        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
-    }
-=======
     public function  order(){
         $order = order::all();
 
@@ -127,5 +99,4 @@ class OrdersController extends Controller
     //     $delete= Order::onlyTrashed()->find($id)->forceDelete();
     //     return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     // }
->>>>>>> 03a4f2f745187368f60995ee6500ada7fa722f92
 }
