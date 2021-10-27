@@ -36,6 +36,9 @@
                     <x-jet-nav-link href="{{ route('orderDetails') }}">
                         {{ __('OrderDetails') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('payment') }}">
+                        {{ __('Payment') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
