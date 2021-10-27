@@ -16,14 +16,15 @@ use Illuminate\Support\Facades\Hash;
 class OrderDetailsController extends Controller
 {
 
-    public function index($id){
-        $product = product::find($id);
-       return view('order.addOrderDetails' , compact('product'));  
-    }
+    // public function index($id){
+    //     $product = product::find($id);
+    //    return view('order.addOrderDetails' , compact('product'));  
+    // }
+
     public function  orderDetails(){
         $orderDetails = orderDetails::all();
 
-        return view('order.orderDetails' ,compact('orderDetails'));
+        return view('OrderDetails.orderDetails' ,compact('orderDetails'));
 
 
     }
@@ -81,22 +82,25 @@ class OrderDetailsController extends Controller
 
     }
 
-    // public function editDetailsbyOrder(Request $request,$id ){
-    //     $productcode = DB::select(DB::raw("
-    //     SELECT product_code,buy_price FROM products WHERE products.id = $id "));
-        
-    //     // $data = orderDetails::find($request->productcode) ;
-    //     // $data->order_number = $request-> order_number ; 
-    //     // $data->productcode = $request-> product_code ;
-    //     // $data->quantity_ordered = $request-> quantity_ordered ;
-    //     // $data->buy_price = $request-> price_each ; 
-    //     // $data->orderline_number = $request-> orderline_number ; 
-    //     // $data-> save() ;
-    //     //return view('OrderDetails.editOrderDetails' , compact('productcode'));
-    //     // return $productcode;
+    public function editDetailsbyOrder(Request $request,$id ){
+        $productcode_price = DB::select(DB::raw("
+        SELECT product_code,buy_price FROM products WHERE products.id = $id "));
+        return $productcode_price; 
+        //dd($productcode);
+    }
 
-    //     dd($productcode);
-    // }
+    public function updateOrderbyDetails(Request $request ){
+
+        $data = orderDetails::find($request->id) ;
+        $data->order_number = $request-> order_number ; 
+        $data->product_code = $request-> product_code ;
+        $data->quantity_ordered = $request-> quantity_ordered ;
+        $data->price_each = $request-> price_each ; 
+        $data->orderline_number = $request-> orderline_number ; 
+        $data-> save() ;
+        return redirect ('/orderbyDetails/all') ; 
+
+    }
 
     public function deleteOrderDetails($id){
         $delete= OrderDetails::find($id) -> delete () ;
@@ -118,4 +122,3 @@ class OrderDetailsController extends Controller
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 }
-
