@@ -59,4 +59,8 @@ class EmployeeController extends Controller
 
         return view('Employee');
     }
+    public function deleteEmployee($id){
+        $delete= Employee::find($id) -> delete () ;
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+    }
 }
