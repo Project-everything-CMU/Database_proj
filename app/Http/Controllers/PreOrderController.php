@@ -1,9 +1,14 @@
 <?php
-
-namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Customer;
+use App\Models\Employee;
+use App\Models\Product;
+use App\Models\Payments;
+use App\Models\Preorder;
 class PreOrdercontroller extends Controller
 {
      public function index () {
