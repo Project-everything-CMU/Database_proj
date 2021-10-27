@@ -78,11 +78,12 @@ Route::get('/order/all' ,[OrdersController::class,'order']) -> name('order');
 Route::post('/order/add' ,[OrdersController::class,'addOrder']) -> name('addOrder');
 Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
 Route::post('/order/update/',[OrdersController::class,'updateOrder']);
+Route::get('order/orderdetail' ,[OrdersController::class,'order']);
 
-Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']);
+Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']); 
 Route::get('/orderdetail/buy' ,[OrderDetailsController::class,'editDetailsbyOrder']) ;
 //Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'addOrderdetail']);
-
+Route::get('/showorderdetail' ,[OrderDetailsController::class,'index']) -> name('showorderdetail') ;
 
 Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment');
 Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');

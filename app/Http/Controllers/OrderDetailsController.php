@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Hash;
 class OrderDetailsController extends Controller
 {
 
-    // public function index($id){
+    public function index(){
+        $orderDetails= orderDetails::all() ; 
+        return view('Orderdetails.index' , compact('orderDetails'));
+
     //     $product = product::find($id);
     //    return view('order.addOrderDetails' , compact('product'));  
-    // }
+    }
 
     public function  orderDetails($id){
         // $productcode_price = DB::select(DB::raw("
@@ -28,7 +31,7 @@ class OrderDetailsController extends Controller
         $product = product::find($id) ;
         $orderDetails = orderDetails::all();
         
-       // return view('OrderDetails.orderDetails' ,compact('product'));
+        return view('OrderDetails.orderDetails' ,compact('product' , 'orderDetails'));
 
 
     }
@@ -52,17 +55,17 @@ class OrderDetailsController extends Controller
             ]
         );
         //บันทึกข้อมูล
-        $data = array();
-        $data["order_number"] = $request->order_number;
-        $data["product_code"] = $request->product_code;
-        $data["quantity_ordered"] = $request->quantity_ordered;
-        $data["price_each"] = $request->price_each;
-        $data["orderline_number"] = $request->orderline_number;
+        $data = new orderDetails ; 
+        $data -> order_number = $request -> order_number ; 
+        $data -> product_code =$request -> product_code ;
+        $data -> quantity_ordered = $request -> quantity_ordered ; 
+        $data -> price_each = $request -> price_each ;
+        $data -> orderline_number = 0;
+        $data -> save() ; 
      
        
         //query builder
-        DB::table('order_details')->insert($data);
-
+      
         return redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อย");
     }
 

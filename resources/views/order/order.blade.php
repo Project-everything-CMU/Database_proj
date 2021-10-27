@@ -69,8 +69,18 @@
                                             <input type="string" class = "form-control" name = "required_date">
                                             <label for="shipped_date">shipped_date</label>
                                             <input type="string" class = "form-control" name = "shipped_date">
+                                            <br>
                                             <label for="status">status</label>
-                                            <input type="string" class = "form-control" name = "status">
+                                            <select name="status" id="status">
+                                                <option value="shipped">shipped</option>
+                                                <option value="resolved">resolved</option>
+                                                <option value="hold">hold</option>
+                                                <option value="in progress">in progress</option>
+                                                <option value="disputed">disputed</option>
+                                                <option value="canceled">canceled</option>
+                                             
+                                            </select>
+                                            <br>
                                             <label for="comments">comments</label>
                                             <input type="string" class = "form-control" name = "comments">
                                             <label for="customer_number">customer_number</label>

@@ -8,6 +8,7 @@ use App\Models\Customer;
 use App\Models\Employee;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\OrderDetails;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,8 +16,9 @@ class OrdersController extends Controller
 {
     public function  order(){
         $order = order::all();
-
-        return view('Order.order' ,compact('order'));
+        $customer = customer::all(); 
+        $orderdetail = orderdetails::all(); 
+        return view('Order.order' ,compact('order' , 'customer' , 'orderdetail'));
     }
     
     public function addOrder (Request $request){

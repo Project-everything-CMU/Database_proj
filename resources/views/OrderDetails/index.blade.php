@@ -45,39 +45,7 @@
                                                 
                         </div>
                 <div>
-                    <div class = "col-md-15">
-                            <div class = "card-header">แบบฟอร์ม</div>
-                                <div class ="card-body">
-
-                                    <form action="{{route('addOrderDetails')}}" method ="post" >
-                                        @csrf
-
-                                        <div class = "form-group">
-                                            <label for="order_number">order_number</label>
-                                            <input type="integer" class = "form-control" name = "order_number" >
-                                            <label for="product_code">product_code</label>
-                                            <input type="integer" class = "form-control" name = "product_code" value = "{{$product -> product_code}}" >
-                                            <label for="quantity_ordered">quantity_ordered</label>
-                                            <input type="integer" class = "form-control" name = "quantity_ordered">
-                                            <label for="price_each">price_each</label>
-                                            <input type="integer" class = "form-control" name = "price_each" value = "{{$product -> buy_price}}">
-                                            <!-- <label for="orderline_number">orderline_number</label>
-                                            <input type="integer" class = "form-control" name = "orderline_number"> -->
-                                        </div>
-                                       
-                                        @error('order_number')
-                                            <div class="my-2">
-                                                <span class="text-danger">{{$message}}</span>
-                                            </div>
-                                        @enderror
-                                        <br>
-                                        <input type="submit" value = บันทึก  class="btn btn-primary">
-                                        <a href= {{url('order/orderdetail')}} class="btn btn-primary">NEXT</a>
-                                    </form>
-
-                                </div>
-                    </div>
-     
+                  
             </div>
         </div>
     </div>
