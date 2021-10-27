@@ -19,7 +19,7 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('product_code')->unique();
             $table->integer('quantity_ordered')->nullable();
             $table->integer('price_each')->nullable();
-            $table->integer('orderline_number')->nullable();
+            $table->integer('orderline_number')->default(' ');
             $table->timestamps();
             $table->softDeletes();
         });

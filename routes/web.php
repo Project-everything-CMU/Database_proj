@@ -9,6 +9,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderDetailsController;
+use App\Http\Controllers\OrdersController;
+use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,10 +70,11 @@ Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
 
 Route::get('/orderDetails/all' ,[OrderDetailsController::class,'orderDetails']) -> name('orderDetails'); 
 Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails']) -> name('addOrderDetails');
-Route::get('orderDetails/edit/{addr_ID}' ,[OrderDetailsController::class,'editOrderDetails']);
+Route::get('orderDetails/edit/{order_number}' ,[OrderDetailsController::class,'editOrderDetails']);
 Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
 
-Route::get('/user/buy/{id}',[AdminController::class,'buy']);
+Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'index']);
+//Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'addOrderdetail']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();

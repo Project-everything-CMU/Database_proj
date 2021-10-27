@@ -26,6 +26,7 @@
                                                 <th scope="col">quantity_instock</th>
                                                 <th scope="col">buy_price</th>
                                                 <th scope="col">MSRP</th>
+                                                <br>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -45,7 +46,7 @@
                                                             <a href= {{url('/product/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
                                                     <td>
-                                                            <a href= {{url('/product/buy/'.$row->id)}} class="btn btn-primary">สั่งซื้อ</a>
+                                                            <a href= {{url('/orderdetail/buy/'.$row->id)}} class="btn btn-primary">สั่งซื้อ</a>
                                                     </td>
                                                 </tr> 
                                                 @endforeach

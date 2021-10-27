@@ -96,3 +96,4 @@ class OrderDetailsController extends Controller
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 }
+

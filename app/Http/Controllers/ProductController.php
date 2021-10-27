@@ -14,9 +14,7 @@ class ProductController extends Controller
 {
     //
     public function   product(){
-        $products = DB::table('Product')
-        -> select ('Product.*') -> orderby('quantity_instock');
-     
+        $products= Product::all();
         return view('Product.product' ,compact('products'));
 
     

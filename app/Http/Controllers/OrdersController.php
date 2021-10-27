@@ -19,5 +19,19 @@ class OrdersController extends Controller
         return $data  ; 
     }
 
-    
+    public function addOrder(Request $request , $id) {
+            $order = Orderdetails::find($id) ; 
+            $order_number = $order -> order_number ; 
+            $customer = customer::find($request -> customer_number) ;
+            
+            $data = new Order  ;
+            $data -> order_number = $order_number ; 
+            $data -> orderDate = $request -> orderDate ;
+            $data -> requiredDate = $request -> requiredDate ; 
+            $data -> shippedData = $request -> shippedDate ; 
+            $data -> status = $request -> status ; 
+            $data -> comment = $request -> comment ; 
+            $data -> customerNumber = $request ->customerNumber ; 
+            return $data -> id ;
+    }
 }
