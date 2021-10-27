@@ -16,7 +16,38 @@
                                     <div class = "row ">
                                         <table class="table">
                                         
+                                       
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">customerNumber</th>
+                                                <th scope="col">customerName</th>
+                                                <th scope="col">customerFirstname</th>
+                                                <th scope="col">customerLastname</th>
+                                                <th scope="col">phone</th>
+                                                <th scope="col">AddressID</th>
+                                                <th scope="col">SaleRepEmployeeNumber</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($customer as $row)
+                                            <tr>
+                                                    
+                                                <td>{{$row -> customerNumber}}</td>
+                                                <td>{{$row -> customerName}}</td>
+                                                <td>{{$row -> contactFirstName}}</td>
+                                                <td>{{$row -> contactLastname}}</td>
+                                                <td>{{$row -> Phone}}</td>
+                                                <td>{{$row -> AddressID}}</td>
+                                                <td>{{$row -> SaleRepEmployeeNumber}}</td>
+                                           
+                                                    <td>
+                                                            <a href= {{url('/customer/edit/'.$row->customerNumber)}} class="btn btn-primary">แก้ไข</a>
+                                                    </td>
+                                                   
+                                                </tr> 
+                                                @endforeach
                                         
+                                        </table>
                                         </table>
                                     </div>
                                 </div>       
@@ -30,28 +61,23 @@
                                         @csrf
 
                                         <div class = "form-group">
-                                            <label for="product_code">product_code</label>
-                                            <input type="integer" class = "form-control" name = "product_code" >
-                                            <label for="product_name">customerName</label>
-                                            <input type="text" class = "form-control" name = "product_name">
-                                            <label for="product_line">product_line</label>
-                                            <input type="text" class = "form-control" name = "product_line">
-                                            <label for="product_scale">product_scale</label>
-                                            <input type="text" class = "form-control" name = "product_scale">
-                                            <label for="product_vendor">product_vendor</label>
-                                            <input type="text" class = "form-control" name = "product_vendor">
-                                            <label for="product_description">product_description</label>
-                                            <input type="text" class = "form-control" name = "product_description">
-                                            <label for="quantity_instock">quantity_instock</label>
-                                            <input type="integer" class = "form-control" name = "quantity_instock">
-                                            <label for="buy_price">buy_price</label>
-                                            <input type="integer" class = "form-control" name = "buy_price">
-                                            <label for="MSRP">MSRP</label>
-                                            <input type="integer" class = "form-control" name = "MSRP">
+                                            <label for="customerNumber">customerNumber</label>
+                                            <input type="integer" class = "form-control" name = "customerNumber" >
+                                            <label for="customerName">customerName</label>
+                                            <input type="text" class = "form-control" name = "customerName">
+                                            <label for="contactFirstname">contactFirstname</label>
+                                            <input type="text" class = "form-control" name = "contactFirstname">
+                                            <label for="contactLastname">contactLastname</label>
+                                            <input type="text" class = "form-control" name = "contactLastname">
+                                            <label for="phone">phone</label>
+                                            <input type="text" class = "form-control" name = "phone">
+                                            <label for="AddressID">AddressID</label>
+                                            <input type="text" class = "form-control" name = "AddressID">
+                                        
 
                                         </div>
                                        
-                                        @error('product_code')
+                                        @error('customerNumber')
                                             <div class="my-2">
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
