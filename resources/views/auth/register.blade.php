@@ -53,9 +53,10 @@
                     required />
             </div>
             <div class="mt-4">
-                <x-jet-label for="jobTitle" value="{{ __('jobTitle') }}" />
-                <x-jet-input id="jobTitle" class="block mt-1 w-full" type="text" name="jobTitle" 
-                    required />
+                <x-jet-label for="jobTitle" value="{{ __('jobTitle') }}" /> 
+                <select name="jobTitle" id="jobTitle">
+                        <option value="Sale">Sale</option>
+                </select>
             </div>
 
             

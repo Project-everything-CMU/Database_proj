@@ -83,20 +83,20 @@ class ProductController extends Controller
             ]
         );
         //บันทึกข้อมูล
-        $data = array();
-        $data["product_code"] = $request->product_code;
-        $data["product_name"] = $request->product_name;
-        $data["product_line"] = $request->product_line;
-        $data["product_scale"] = $request->product_scale;
-        $data["product_vendor"] = $request->product_vendor;
-        $data["product_description"] = $request->product_description;
-        $data["quantity_instock"] = $request->quantity_instock;
-        $data["buy_price"] = $request->buy_price;
-        $data["MSRP"] = $request->MSRP;
+        $data = new Product ; 
+        $data -> product_code = $request->product_code;
+        $data->product_name = $request->product_name;
+        $data->product_line = $request->product_line;
+        $data->product_scale = $request->product_scale;
+        $data->product_vendor = $request->product_vendor;
+        $data->product_description = $request->product_description;
+        $data->quantity_instock = $request->quantity_instock;
+        $data->buy_price = $request->buy_price;
+        $data -> MSRP = $request->MSRP;
     
-    
+        $data -> save() ;
         //query builder
-        DB::table('products')->insert($data);
+
 
         return redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อย");
     }

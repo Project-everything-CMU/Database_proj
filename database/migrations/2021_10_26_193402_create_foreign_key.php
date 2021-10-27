@@ -13,10 +13,20 @@ class CreateForeignKey extends Migration
      */
     public function up()
     {
-        Schema::create('foreign_key', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('Offices') , function (Blueprint $table){
+            $table -> foreign('officeCode') -> reference('officeCode') -> 
         });
+
+
+        Schema::table('Customer' , function (Blueprint $table)
+        {
+            $table -> foreign('AddressID')  -> refenence('addr_ID') -> on('addrsses') -> ondelete('cascade') ; 
+            $table -> foreign('SaleRepEmployeeNumber') -> reference('employeeNumber') -> on('Employee') ;
+
+        });
+
+
+        
     }
 
     /**

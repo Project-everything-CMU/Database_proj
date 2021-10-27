@@ -15,15 +15,20 @@ use Illuminate\Support\Facades\Hash;
 
 class OrderDetailsController extends Controller
 {
+
+    public function index($id){
+        $product = product::find($id);
+       return view('order.addOrderDetails' , compact('product'));  
+    }
     public function  orderDetails(){
         $orderDetails = orderDetails::all();
 
-        return view('OrderDetails.orderDetails' ,compact('orderDetails'));
+        return view('order.orderDetails' ,compact('orderDetails'));
 
 
     }
     
-    public function addOrderDetails(Request $request){
+    public function addOrderDetails(Request $request ){
         $request->validate(
             [
                 'order_number'=>'required|max:255|',

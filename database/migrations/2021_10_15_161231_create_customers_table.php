@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->text('contactLastname');
             $table->text('contactFirstName');
             $table->text('Phone');
-            $table->integer('AddressID');
+            $table->text('AddressID');
             $table->integer('SaleRepEmployeeNumber');
             $table->timestamps();
             $table->softDeletes();

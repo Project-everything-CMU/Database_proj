@@ -48,7 +48,7 @@ class AdminController extends Controller
     $user = Auth::user() -> id ;
     $data =  User::find($id) ;
     $name = $data -> id ; 
-    if($user == $name){
+    if($user == $name  ){
         
         return view('admin.editUser' , compact('data'));    
               

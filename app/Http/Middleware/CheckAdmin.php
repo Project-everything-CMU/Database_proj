@@ -17,20 +17,11 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {   
+        $name = Auth::user() -> name ; 
+        $user = Auth::user()  -> jobTitle ; 
+        if($user == "CEO" ||  $name = "EMANUEL")
+            return $next($request); 
+        else return redirect() -> back() ;
 
-        return $next($request); 
-    //     $status = Auth::user() -> status;
-    //     $user = Auth::user() -> name ;
-    //     if($user == "EMANUEL"){
-    //         $status = "admin" ;
-    //     } 
-       
-    //     if ($status == "admin" ) {
-    //         return $next($request); 
-    //     }else
-
-    //     return redirect('dashboard');
-
-        
      }
 }

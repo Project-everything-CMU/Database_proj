@@ -15,14 +15,14 @@ class OrdersController extends Controller
 {
     //
     public function index () {
-        $data = Order::all();
+        $data = Order::all(); 
         return $data  ; 
     }
 
     public function addOrder(Request $request , $id) {
             $order = Orderdetails::find($id) ; 
             $order_number = $order -> order_number ; 
-            $customer = customer::find($request -> customer_number) ;
+            $customer = customer::find($request -> customer_number) ; 
             
             $data = new Order  ;
             $data -> order_number = $order_number ; 
@@ -33,5 +33,10 @@ class OrdersController extends Controller
             $data -> comment = $request -> comment ; 
             $data -> customerNumber = $request ->customerNumber ; 
             return $data -> id ;
+    }
+
+    public function deleteOrder($id){
+        $delete= Order::find($id) -> delete () ;
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 }

@@ -50,7 +50,7 @@ Route::post('/employee/add' ,[EmployeeController::class,'addEmployee']) -> name(
 
 Route::get('/product/all' ,[ProductController::class,'product']) -> name('product') ;
 Route::post('/product/add' ,[ProductController::class,'addProduct']) -> name('addProduct') ;
-Route::get('product/edit/{product_code}' ,[ProductController::class,'editProduct']) ;
+Route::get('product/edit/{product_code}' ,[ProductController::class,'editProduct']) -> middleware('checkSale');
 Route::post('/product/update/',[ProductController::class,'updateProduct']) ;
 
 Route::get('user/edit/{id}' ,[AdminController::class,'editUser'])  -> middleware('check');
