@@ -17,7 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->integer('customer_number')->unique();
             $table->integer('check_number')->nullable();
-            $table->date('payment_date')->nullable();
+            $table->text('payment_date')->nullable();
             $table->integer('amount')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -10,6 +10,7 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderDetailsController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\PaymentsController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -80,6 +81,12 @@ Route::post('/order/update/',[OrdersController::class,'updateOrder']);
 
 Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'editDetailsbyOrder']);
 //Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'addOrderdetail']);
+
+
+Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment');
+Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');
+Route::get('payment/edit/{id}' ,[PaymentsController::class,'editPayment']);
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
