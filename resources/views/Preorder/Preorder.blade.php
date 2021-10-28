@@ -49,7 +49,7 @@
                                                             <a href= {{url('/Preorder/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
                                                     <td>
-                                                            <a href=  class="btn btn-danger">Delete</a>
+                                                            <a href=  {{url('/Preorder/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr> 
                                                 @endforeach
