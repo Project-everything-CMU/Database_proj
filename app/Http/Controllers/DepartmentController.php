@@ -18,4 +18,8 @@ class DepartmentController extends Controller
         $department = Department::all() ;
         return view('department/all' , compact('department'));
     }
+    public function deleteDepartment($id){
+        $delete= Department::find($id) -> delete () ;
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+    }
 }

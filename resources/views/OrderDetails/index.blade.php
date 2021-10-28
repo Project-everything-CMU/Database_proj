@@ -6,16 +6,21 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                กรุณากรอกข้อมูล
+            <center>
+                <body>
+                <br>
+                ORDER DETAIL
+                </body>
+            </center>
                     <div class="py-5">
                         <div class = "col-md-12">
-                            <div class = "card-header">ตารางข้อมูล</div>
+                            <div class = "card-header"><center><body>ตารางข้อมูล</body></div>
                             <table class="table">
                             <thead>
                                 <tr>
-                                                <th scope="col">No</th>
+                                                <th scope="col">No.</th>
                                                 <th scope="col">order_number</th>
                                                 <th scope="col">product_code</th>
                                                 <th scope="col">quantity_ordered</th>
@@ -42,7 +47,7 @@
                                                 @endforeach
                                         
                                         </table>
-                                    
+                                        {{$orderDetails->links()}}
                                         </table>
                                                 
                         </div>

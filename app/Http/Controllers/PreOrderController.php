@@ -55,6 +55,10 @@ public function updatePreorder(Request $request){
     $Preorder -> save() ;
     return view ('/Preorder.Preorder' , compact('data')) ; 
 }
+    public function deletePreorder($id){
+    $delete= Preorder::find($id) -> delete () ;
+    return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+}
 }
 
 

@@ -24,7 +24,7 @@ class OrderDetailsController extends Controller
 
 
     public function index(){
-        $orderDetails= orderDetails::all() ; 
+        $orderDetails= orderDetails::paginate(4) ; 
         return view('Orderdetails.index' , compact('orderDetails'));
 
     //     $product = product::find($id);
@@ -49,15 +49,15 @@ class OrderDetailsController extends Controller
                 'order_number'=>'required|max:255|',
             ],
             [
-                'order_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'order_number.required'=>"กรุณากรอก order_number ด้วยครับ",
                 'order_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'product_code.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'product_code.required'=>"กรุณากรอก product_code ด้วยครับ",
                 'product_code.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'quantity_ordered.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'quantity_ordered.required'=>"กรุณากรอก quantity_ordered ด้วยครับ",
                 'quantity_ordered.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'price_each.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'price_each.required'=>"กรุณากรอก price_each ด้วยครับ",
                 'price_each.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
-                'orderline_number.required'=>"กรุณาป้อนข้อมูลด้วยครับ",
+                'orderline_number.required'=>"กรุณากรอก orderline_number ด้วยครับ",
                 'orderline_number.max' => "ห้ามป้อนเกิน 255 ตัวอักษร",
             ]
         );

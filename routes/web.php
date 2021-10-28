@@ -48,13 +48,18 @@ Route::get('/customer/delete/{id}',[CustomerController::class,'deleteCustomer'])
 
 Route::get('/employee/all' ,[EmployeeController::class,'employee']) -> name('employee');
 Route::post('/employee/add' ,[EmployeeController::class,'addEmployee']) -> name('addEmployee');
+Route::get('/employee/delete/{id}',[EmployeeController::class,'deleteEmployee']) -> name('deleteEmployee');
 //Route::get('/employee/add' ,[AdminController::class,'addEmployee']) -> name('addEmployee');
 
 Route::get('/product/all' ,[ProductController::class,'product']) -> name('product') ;
 Route::post('/product/add' ,[ProductController::class,'addProduct']) -> name('addProduct') ;
 Route::get('product/edit/{product_code}' ,[ProductController::class,'editProduct']) -> middleware('checkSale');
 Route::post('/product/update/',[ProductController::class,'updateProduct']) ;
+<<<<<<< HEAD
 Route::get('/product/delete/{id}',[ProductController::class,'deleteProduct']) ;
+=======
+Route::get('/product/delete/{id}',[EmployeeController::class,'deleteProduct']) -> name('deleteProduct');
+>>>>>>> 2364f5124aa481cf88e41be88e679bafc57bebc9
 
 Route::get('user/edit/{id}' ,[AdminController::class,'editUser'])  -> middleware('checkManager');
 Route::post('/user/update/',[AdminController::class,'updateUser']);
@@ -67,6 +72,7 @@ Route::post('/address/add' ,[AddressController::class,'addAddress']) -> name('ad
 Route::get('address/edit/{addr_ID}' ,[AddressController::class,'editAddress']);
 Route::post('/address/update/',[AddressController::class,'updateAddress']);
 Route::get('/address/delete/{id}',[AddressController::class,'addressProduct']) ;
+
 
 Route::get('/offices/all' ,[OfficesController::class,'offices']) -> name('offices'); 
 Route::post('/offices/add' ,[OfficesController::class,'addOffices']) -> name('addOffices');
@@ -88,6 +94,7 @@ Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
 Route::post('/order/update/',[OrdersController::class,'updateOrder']);
 Route::get('/order/delete/{id}',[OrdersController::class,'deleteOrder']) ;
 Route::get('order/orderdetail' ,[OrdersController::class,'order']);
+Route::get('/order/delete/{id}',[OrdersController::class,'delete']) -> name('delete');
 
 
 Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']); 
@@ -106,7 +113,7 @@ Route::get('Preorder/all' , [PreOrderController::class,'index']) -> name('Preord
 Route::post('Preorder/add' , [PreOrderController::class,'addPreorder']) -> name('addPreorder');
 Route::get('Preorder/edit/{id}' ,[PreOrderController::class,'editPreorder']);
 Route::post('/Preorder/update/',[PreOrderController::class,'updatePreorder']);
-
+Route::get('/Preorder/delete/{id}',[PreOrderController::class,'deletePreorder']) -> name('deletePreorder');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
     // return view('dashboard' , compact('user'));

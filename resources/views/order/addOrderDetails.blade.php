@@ -1,4 +1,4 @@
-<div class = "card-header">แบบฟอร์ม</div>
+<div class = "card-header"><center><body>แบบฟอร์ม</body></div>
     <div class ="card-body">
                                
             <form action="" method ="post" >
@@ -18,12 +18,26 @@
 
                 </div>
                                        
-                @error('customerNumber')
-                        <div class="my-2">
-                            <span class="text-danger">{{$message}}</span>
-                        </div>
-                                            
-                @enderror
+                                        @error('order_number')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('order_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('required_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
+                                        @error('shipped_date')
+                                            <div class="my-2">
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                        @enderror
                         <br>
                 <input type="submit" value = บันทึก  class="btn btn-primary">
                                         
