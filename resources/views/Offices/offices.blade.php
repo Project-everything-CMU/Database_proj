@@ -11,7 +11,7 @@
             <center>
                 <body>
                 <br>
-                ADDRESS
+                OFFICES
                 </body>
             </center>
                     <div class="py-5">

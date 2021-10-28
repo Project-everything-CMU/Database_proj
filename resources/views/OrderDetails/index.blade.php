@@ -47,7 +47,7 @@
                                                 @endforeach
                                         
                                         </table>
-                                        {{$orderDetails->links()}}
+                                      
                                         </table>
                                                 
                         </div>

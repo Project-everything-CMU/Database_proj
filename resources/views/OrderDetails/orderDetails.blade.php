@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                กรุณากรอกข้อมูล
+
                     <div class="py-5">
                         <div class = "col-md-12">
                             <div class = "card-header">ตารางข้อมูล</div>
@@ -74,7 +74,7 @@
                                         @enderror
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">
-                                        <a href= {{url('order/orderdetail')}} class="btn btn-primary">NEXT</a>
+                                        <a href= {{url('/payment/all')}} class="btn btn-primary">NEXT</a>
                                         
                                     </form>
                                    

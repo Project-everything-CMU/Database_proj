@@ -11,7 +11,7 @@
             <center>
                 <body>
                 <br>
-                EDIT ADDRESS
+                EDIT OFFICES
                 </body>
             </center>
             

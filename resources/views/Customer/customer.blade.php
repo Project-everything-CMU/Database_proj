@@ -11,7 +11,7 @@
                 <center>
                 <body>
                 <br>
-                HELLO  CUSTOMER
+                CUSTOMER
                 </body>
                 </center>
                     <div class="py-5">

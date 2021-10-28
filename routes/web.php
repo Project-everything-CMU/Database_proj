@@ -80,7 +80,7 @@ Route::get('/orderDetails/all' ,[OrderDetailsController::class,'orderDetails']) 
 Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails']) -> name('addOrderDetails');
 Route::get('orderDetails/edit/{order_number}' ,[OrderDetailsController::class,'editOrderDetails']);
 Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
-Route::get('/orderDetails/payment' , [OrderDetailsController::class,'updateOrderDetails']);
+Route::get('/orderDetails/payment' , [OrderDetailsController::class,'toPayment']);
 Route::get('/orderDetails/delete/{id}',[OrderDetailsController::class,'deleteOrderDetails']) ;
 
 
@@ -90,7 +90,7 @@ Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
 Route::post('/order/update/',[OrdersController::class,'updateOrder']);
 Route::get('/order/delete/{id}',[OrdersController::class,'deleteOrder']) ;
 Route::get('order/orderdetail' ,[OrdersController::class,'order']);
-Route::get('/order/delete/{id}',[OrdersController::class,'delete']) -> name('delete');
+//Route::get('/order/delete/{id}',[OrdersController::class,'delete']) -> name('delete');
 
 
 Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']); 

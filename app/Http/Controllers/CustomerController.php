@@ -26,6 +26,8 @@ class CustomerController extends Controller
         $data -> customerName = $request -> customerName;
         $data -> contactFirstName = $request -> contactFirstName;
         $data -> contactLastname = $request -> contactLastname; 
+        $data -> Phone = $request -> Phone ; 
+        $data -> AddressID = $request -> AddressID ;
         $data-> save() ;
         return redirect ('/customer/all') ; 
     }

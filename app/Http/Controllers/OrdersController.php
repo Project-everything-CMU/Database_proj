@@ -87,15 +87,15 @@ class OrdersController extends Controller
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }
 
-    public function soft($id){
-        $delete = Order::find($id)->delete();
-        return redirect()->back()->with('success',"ลบข้อมูลเรียบร้อย");
-    }
+    // public function soft($id){
+    //     $delete = Order::find($id)->delete();
+    //     return redirect()->back()->with('success',"ลบข้อมูลเรียบร้อย");
+    // }
 
-    public function restore($id){
-        $restore= Order::withTrashed()->find($id)->restore();
-        return redirect()->back()->with('success',"กู้คืนข้อมูลเรียบร้อย");
-    }
+    // public function restore($id){
+    //     $restore= Order::withTrashed()->find($id)->restore();
+    //     return redirect()->back()->with('success',"กู้คืนข้อมูลเรียบร้อย");
+    // }
 
     // public function delete($id){
     //     $delete= Order::onlyTrashed()->find($id)->forceDelete();

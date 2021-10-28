@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Address;
 use App\Models\offices;
 use App\Models\OrderDetails;
+use App\Models\Payments;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,13 +19,13 @@ class OrderDetailsController extends Controller
 
 
     public function toPayment(){
-        
-        return view('payment/all') ;
+        $data = payments::paginate(4) ;
+        return view('payment.payment' , compact('data')) ;
     }
 
 
     public function index(){
-        $orderDetails= orderDetails::paginate(4) ; 
+        $orderDetails= orderDetails::all() ; 
         return view('Orderdetails.index' , compact('orderDetails'));
 
     //     $product = product::find($id);
