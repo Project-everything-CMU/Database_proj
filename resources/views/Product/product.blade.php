@@ -54,6 +54,9 @@
                                                     <td>
                                                             <a href= {{url('/orderdetail/buy/'.$row->id)}} class="btn btn-primary">สั่งซื้อ</a>
                                                     </td>
+                                                    <td>
+                                                            <a href=  {{url('/product/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
+                                                    </td>
                                                 </tr> 
                                                 @endforeach
                                         </tbody>

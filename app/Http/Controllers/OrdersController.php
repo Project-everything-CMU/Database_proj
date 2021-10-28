@@ -82,7 +82,7 @@ class OrdersController extends Controller
 
     }
 
-    public function delete($id){
+    public function deleteOrder($id){
         $delete= Order::find($id) -> delete () ;
         return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
     }

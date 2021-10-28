@@ -35,7 +35,9 @@
                                                     <td>
                                                             <a href= {{url('/orderDetail/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
-                                                   
+                                                    <td>
+                                                            <a href=  {{url('/orderDetails/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
+                                                    </td>
                                                 </tr> 
                                                 @endforeach
                                         
@@ -73,8 +75,9 @@
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">
                                         <a href= {{url('order/orderdetail')}} class="btn btn-primary">NEXT</a>
+                                        
                                     </form>
-
+                                   
                                 </div>
                     </div>
      

@@ -51,6 +51,9 @@
                                                     <td>
                                                          <a href= {{url('/offices/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
+                                                    <td>
+                                                            <a href=  {{url('/offices/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
+                                                    </td>
                                                 </tr> 
                                                 @endforeach
                                         </tbody>

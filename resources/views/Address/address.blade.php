@@ -45,7 +45,10 @@
                                                     <td>{{$row -> state}}</td>
                                                     <td>{{$row -> postalcode}}</td>
                                                     <td>
-                                                         <a href= {{url('/address/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
+                                                         <a href= {{url('/address/edit/'.$row->id)}} class="btn btn-primary">Edit</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href=  {{url('/address/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr> 
                                                 @endforeach

@@ -54,43 +54,53 @@ Route::get('/product/all' ,[ProductController::class,'product']) -> name('produc
 Route::post('/product/add' ,[ProductController::class,'addProduct']) -> name('addProduct') ;
 Route::get('product/edit/{product_code}' ,[ProductController::class,'editProduct']) -> middleware('checkSale');
 Route::post('/product/update/',[ProductController::class,'updateProduct']) ;
+Route::get('/product/delete/{id}',[ProductController::class,'deleteProduct']) ;
 
-Route::get('user/edit/{id}' ,[AdminController::class,'editUser'])  -> middleware('check');
+Route::get('user/edit/{id}' ,[AdminController::class,'editUser'])  -> middleware('checkManager');
 Route::post('/user/update/',[AdminController::class,'updateUser']);
-Route::post('/user/changerole/',[AdminController::class,'changeRole']) -> name('changeRole');
+Route::post('/user/changerole/',[AdminController::class,'changeRole']) -> name('changeRole') -> middleware('checkManager');
 Route::get('/user/delete/{id}',[AdminController::class,'deleteUser']) -> middleware('check');
+
 
 Route::get('/address/all' ,[AddressController::class,'address']) -> name('address'); 
 Route::post('/address/add' ,[AddressController::class,'addAddress']) -> name('addAddress');
 Route::get('address/edit/{addr_ID}' ,[AddressController::class,'editAddress']);
 Route::post('/address/update/',[AddressController::class,'updateAddress']);
+Route::get('/address/delete/{id}',[AddressController::class,'addressProduct']) ;
 
 Route::get('/offices/all' ,[OfficesController::class,'offices']) -> name('offices'); 
 Route::post('/offices/add' ,[OfficesController::class,'addOffices']) -> name('addOffices');
 Route::get('offices/edit/{office_code}' ,[OfficesController::class,'editOffices']);
 Route::post('/offices/update/',[OfficesController::class,'updateOffices']);
+Route::get('/offices/delete/{id}',[OfficesController::class,'deleteOffices']) ;
 
 Route::get('/orderDetails/all' ,[OrderDetailsController::class,'orderDetails']) -> name('orderDetails'); 
 Route::post('/orderDetails/add' ,[OrderDetailsController::class,'addOrderDetails']) -> name('addOrderDetails');
 Route::get('orderDetails/edit/{order_number}' ,[OrderDetailsController::class,'editOrderDetails']);
 Route::post('/orderDetails/update/',[OrderDetailsController::class,'updateOrderDetails']);
+Route::get('/orderDetails/payment' , [OrderDetailsController::class,'updateOrderDetails']);
+Route::get('/orderDetails/delete/{id}',[OrderDetailsController::class,'deleteOrderDetails']) ;
+
 
 Route::get('/order/all' ,[OrdersController::class,'order']) -> name('order'); 
 Route::post('/order/add' ,[OrdersController::class,'addOrder']) -> name('addOrder');
 Route::get('order/edit/{order_number}' ,[OrdersController::class,'editOrder']);
 Route::post('/order/update/',[OrdersController::class,'updateOrder']);
+Route::get('/order/delete/{id}',[OrdersController::class,'deleteOrder']) ;
 Route::get('order/orderdetail' ,[OrdersController::class,'order']);
+
 
 Route::get('/orderdetail/buy/{product_code}',[OrderDetailsController::class,'orderDetails']); 
 Route::get('/orderdetail/buy' ,[OrderDetailsController::class,'editDetailsbyOrder']) ;
 //Route::get('/orderdetail/buy/{id}',[OrderDetailsController::class,'addOrderdetail']);
 Route::get('/showorderdetail' ,[OrderDetailsController::class,'index']) -> name('showorderdetail') ;
 
+
 Route::get('payment/all' , [PaymentsController::class,'index']) -> name('payment');
 Route::post('payment/add' , [PaymentsController::class,'addPayment']) -> name('addPayment');
 Route::get('payment/edit/{id}' ,[PaymentsController::class,'editPayment']);
 Route::post('/payment/update/',[PaymentsController::class,'updatePayment']);
-
+Route::get('/payment/delete/{id}',[PaymentsController::class,'deletePayment']) ;
 
 Route::get('Preorder/all' , [PreOrderController::class,'index']) -> name('Preorder');
 Route::post('Preorder/add' , [PreOrderController::class,'addPreorder']) -> name('addPreorder');

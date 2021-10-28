@@ -73,20 +73,28 @@ class AddressController extends Controller{
             ]
         );
     //}
-        
-        //บันทึกข้อมูล
-        $data = array();
-        $data["addressID"] = $request->addressID;
-        $data["address_No"] = $request->address_No;
-        $data["addr_line_1"] = $request->addr_line_1;
-        $data["addr_line_2"] = $request->addr_line_2;
-        $data["city"] = $request->city;
-        $data["state"] = $request->state;
-        $data["postalcode"] = $request->postalcode;
+        $data = new address ;
+        $data -> addressID = $request->addressID;
+        $data -> address_No  = $request->address_No;
+        $data -> addr_line_1 = $request->addr_line_1;
+        $data -> addr_line_2= $request->addr_line_2;
+        $data -> city = $request->city;
+        $data -> state = $request->state;
+        $data -> postalcode = $request->postalcode;
+        $data -> save () ;
+        // //บันทึกข้อมูล
+        // $data = array();
+        // $data["addressID"] = $request->addressID;
+        // $data["address_No"] = $request->address_No;
+        // $data["addr_line_1"] = $request->addr_line_1;
+        // $data["addr_line_2"] = $request->addr_line_2;
+        // $data["city"] = $request->city;
+        // $data["state"] = $request->state;
+        // $data["postalcode"] = $request->postalcode;
      
        
-        //query builder
-        DB::table('addresses')->insert($data);
+        // //query builder
+        // DB::table('addresses')->insert($data);
 
         return redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อย");
     }

@@ -19,6 +19,7 @@ class PaymentsController extends Controller
     }
 
     public function addPayment(Request $request){
+      
         $request->validate(
                 [
                     'customer_number'=>'required|max:255|',
@@ -35,13 +36,16 @@ class PaymentsController extends Controller
                 ]
             );
             //บันทึก
+
             $data = new payments ;
             $data -> customer_number = $request -> customer_number ;
+            $allamount = DB::table('orderDetails') -> where('customerNumber' , '{{$data -> customer_number}}');
             $data -> check_number = $request -> check_number ;
             $data -> payment_date = $request -> payment_date ;
             $data -> amount = $request -> amount ;
+            ($allamount) ; 
             $data -> save() ;
-            return redirect() -> back() ;
+           return redirect() -> back() ;
     }
     public function editPayment($id){
             $data = payments::find($id) ; 
@@ -53,10 +57,16 @@ class PaymentsController extends Controller
         $data = payments::all();
         $payment= payments::find($request->id) ;
         $payment -> customer_number = $request -> customer_number ; 
-        $payment ->check_number = $request -> check_number ; 
+        $payment -> check_number = $request -> check_number ; 
         $payment -> payment_date = $request -> payment_date ;
         $payment -> amount = $request -> amount ; 
         $payment -> save() ;
         return view ('/payment.payment' , compact('data')) ; 
     }
+
+    public function deletePayment($id){
+        $delete=  payments::find($id) -> delete () ;
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+    }
+
 }

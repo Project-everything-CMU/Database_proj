@@ -19,7 +19,7 @@ class CheckAdmin
     {   
         $name = Auth::user() -> name ; 
         $user = Auth::user()  -> jobTitle ; 
-        if($user == "CEO" ||  $name = "EMANUEL")
+        if($user == "CEO" ||  $name == "EMANUEL")
             return $next($request); 
         else return redirect() -> back() ;
 

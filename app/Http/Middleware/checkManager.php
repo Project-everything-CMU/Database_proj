@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
+
 use Closure;
 use Illuminate\Http\Request;
-
-class CheckSale
+use Illuminate\Support\Facades\Auth;
+class checkManager
 {
     /**
      * Handle an incoming request.
@@ -18,10 +18,8 @@ class CheckSale
     {
         $name = Auth::user() -> name ; 
         $user = Auth::user()  -> jobTitle ; 
-        if( $user == "Sale"  ||$name == "EMANUEL" ||$user == "CEO")
+        if( $user == "Sale Manager"  ||$name == "EMANUEL" ||$user == "CEO")
             return $next($request); 
         else return redirect() -> back() ;
-
     }
 }
- 

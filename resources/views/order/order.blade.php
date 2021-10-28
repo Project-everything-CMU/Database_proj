@@ -41,6 +41,9 @@
                                                     <td>
                                                          <a href= {{url('/order/edit/'.$row->id)}} class="btn btn-primary">แก้ไข</a>
                                                     </td>
+                                                    <td>
+                                                            <a href=  {{url('/order/delete/'.$row->id)}} class="btn btn-danger">Delete</a>
+                                                    </td>
                                                 </tr> 
                                                 @endforeach
                                         </tbody>
@@ -94,6 +97,9 @@
                                         @enderror
                                         <br>
                                         <input type="submit" value = บันทึก  class="btn btn-primary">
+                                        <td>
+                                        <a href= {{url('/orderDetails/payment')}} class="btn btn-primary">NEXT</a>
+                                    </td>
                                     </form>
 
                                 </div>

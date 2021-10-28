@@ -112,7 +112,7 @@ class ProductController extends Controller
     
         $data -> save() ;
         //query builder
-
+        
 
         return redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อย");
     }

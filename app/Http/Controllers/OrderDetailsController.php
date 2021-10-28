@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Hash;
 class OrderDetailsController extends Controller
 {
 
+
+    public function toPayment(){
+        
+        return view('payment/all') ;
+    }
+
+
     public function index(){
         $orderDetails= orderDetails::all() ; 
         return view('Orderdetails.index' , compact('orderDetails'));
